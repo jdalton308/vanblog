@@ -1,0 +1,1 @@
+- Colors: Light blue lighter, and use black as main header color. Work in accent color

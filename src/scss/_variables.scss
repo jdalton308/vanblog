@@ -9,18 +9,22 @@ $grey:		    #666;
 $light-grey:	#aaa;
 $lighter-grey:  #ddd;
 $off-white: 	#FAFAFA;
-$white: 		#FFF;
+$white: 		  #FFF;
 
-$main-bg: 		$grey;
-$text-color: 	$white;
-$box-shadow: 	 4px 2px 20px -10px $black;
+$base-color:    #ADFBFF; // light-blue
+$second-color:  #000; // #2B5A99; // blue
+$accent-color:  #ED8766; // orange
+
+$text-color: 	  #99A;;
+$box-shadow:    4px 2px 20px -10px $black;
 $box-shadow-active: 	 4px 2px 20px -14px $black;
 
 
 //// FONTS ////
 //-------------
-$base-font-size: 	20px;
-$sansFamily: 		Arial, sans-serif;
+$header-fonts: 'Montserrat', serif;
+$body-fonts: 'Source Sans Pro', arial, sans-serif;
+$base-font-size: 20px;
 
 
 //// BREAKPOINTS ////
@@ -70,6 +74,24 @@ $curve3: cubic-bezier(.21,.05,.07,.99);
   position: absolute;
   top: 50%;
   @include transform( translateY(-50%) );
+}
+
+@mixin canFlex() {
+  @supports (display: -webkit-flex) or (display: -moz-flex) or (display: flex) {
+    @content;
+  }
+}
+@mixin flexParent() {
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: flex;
+}
+@mixin flexChild($values) {
+  -moz-box-flex: $values;
+  -webkit-flex: $values;
+  -ms-flex: $values;
+  flex: $values;
 }
 
 // Animations
