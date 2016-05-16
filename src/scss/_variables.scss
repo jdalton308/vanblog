@@ -56,9 +56,9 @@ $curve3: cubic-bezier(.21,.05,.07,.99);
     @content;
   }
 }
-@mixin transition($time: 0.5s) {
-	-webkit-transition: all $time;
-	transition: all $time;
+@mixin transition($time: 0.5s, $curve: ease) {
+	-webkit-transition: all $time $curve;
+	transition: all $time $curve;
 }
 @mixin transform($props) {
   -ms-transform: $props;

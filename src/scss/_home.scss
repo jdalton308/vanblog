@@ -1,8 +1,28 @@
 
 // Home and Landing-Screen Styles
 //------------------------
+body#home {
+	@include smallMedia() {
+		position: relative;
+		top: 0;
+		height: 100vh;
+		overflow: hidden;
+		@include transition(0.6s, $curve2);
+
+		&.scroll {
+			top: -100vh;
+		}
+	}
+}
 .landing {
 	width: 100%;
+	height: 100vh;
+
+	&:after {
+		content: '';
+		display: table;
+		clear: both;
+	}
 
 	.landing-image {
 		background-image: url('/img/tahoe.jpg');
@@ -20,20 +40,38 @@
 
 		h1,
 		h3 {
-			color: $second-color;
 			text-shadow: $text-shadow;
 		}
 		h1 {
 			font-size: 4.2rem;
+			color: $second-color;
+		}
+		h3 {
+			color: $white;
+		}
+		.down-button {
+			@include centerX();
+			bottom: 20px;
 		}
 	}
 	@include smallMedia() {
+		// position: absolute;
+		// z-index: 5;
+		// bottom: 0;
+		// left: 0;
+		// width: 100%;
+		// height: 100%;
+		// @include transition(1s, $curve2);
+		
+		// &.hide {
+		// 	bottom: 100%;
+		// }
 		.landing-image,
 		.landing-title {
 			display: inline-block;
 			float: left;
 			width: 50%;
-			height: 100vh;
+			height: 100%;
 		}
 		.landing-title {
 			.title-box {
@@ -72,7 +110,11 @@
 			position: relative;
 			background-color: $base-color;
 			box-shadow: $box-shadow;
-
+			
+			.up-button {
+				@include centerX();
+				top: 20px;
+			}
 			.side-nav-cont {
 				@include centerMe();
 				width: 100%;
