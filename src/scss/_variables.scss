@@ -11,19 +11,20 @@ $lighter-grey:  #ddd;
 $off-white: 	#FAFAFA;
 $white: 		  #FFF;
 
-$base-color:    #ADFBFF; // light-blue
-$second-color:  #000; // #2B5A99; // blue
-$accent-color:  #ED8766; // orange
+$base-color:    #f24b4b; // salmon
+$second-color:  #6bd6f1; // light-blue
+$accent-color:  #13042b; // dark-blue
+$text-color: 	  #13042b; // dark-blue
 
-$text-color: 	  #99A;;
 $box-shadow:    4px 2px 20px -10px $black;
 $box-shadow-active: 	 4px 2px 20px -14px $black;
+$text-shadow: 1px 1px 1px $grey;
 
 
 //// FONTS ////
 //-------------
 $header-fonts: 'Montserrat', serif;
-$body-fonts: 'Source Sans Pro', arial, sans-serif;
+$body-fonts: 'Open Sans', arial, sans-serif;
 $base-font-size: 20px;
 
 
@@ -50,6 +51,11 @@ $curve3: cubic-bezier(.21,.05,.07,.99);
 
 //// MIXINS ////
 //-------------
+@mixin smallMedia(){
+  @media (min-width: $mobile) {
+    @content;
+  }
+}
 @mixin transition($time: 0.5s) {
 	-webkit-transition: all $time;
 	transition: all $time;

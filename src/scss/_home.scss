@@ -1,0 +1,112 @@
+
+// Home and Landing-Screen Styles
+//------------------------
+.landing {
+	width: 100%;
+
+	.landing-image {
+		background-image: url('/img/tahoe.jpg');
+		background-color: $second-color;
+		background-size: cover;
+		background-position: center center;
+		height: 50vh;
+	}
+	.landing-title {
+		height: 50vh;
+		position: relative;
+		background-color: $base-color;
+		box-shadow: $box-shadow;
+
+
+		h1,
+		h3 {
+			color: $second-color;
+			text-shadow: $text-shadow;
+		}
+		h1 {
+			font-size: 4.2rem;
+		}
+	}
+	@include smallMedia() {
+		.landing-image,
+		.landing-title {
+			display: inline-block;
+			float: left;
+			width: 50%;
+			height: 100vh;
+		}
+		.landing-title {
+			.title-box {
+				@include centerMe();
+				width: 90%;
+				text-align: center;
+			}
+		}
+	}
+}
+
+.featured {
+	clear: both;
+	
+	.side-nav {
+		h1 {
+			text-shadow: $text-shadow;
+		}
+		nav {
+			.nav-item {
+				padding: 5px 10px 7px;
+				color: $white;
+				cursor: pointer;
+			}
+		}
+	}
+	main {
+
+	}
+	@media (min-width: $mobile) {
+		.side-nav,
+		main {
+			height: 100vh;
+		}
+		.side-nav {
+			position: relative;
+			background-color: $base-color;
+			box-shadow: $box-shadow;
+
+			.side-nav-cont {
+				@include centerMe();
+				width: 100%;
+				text-align: center;
+			}
+			nav {
+				.nav-item {
+					@include transition();
+
+					&:hover {
+						background-color: $white;
+						color: $base-color;
+					}
+				}
+			}
+		}
+		main {
+			.main-scroll {
+				height: 100%;
+				overflow-y: auto;
+			}
+		}
+		// Inline-block layout...
+
+		// Flexbox layout...
+		@include canFlex() {
+			@include flexParent();
+
+			.side-nav {
+				@include flexChild(0 1 30vw);
+			}
+			main {
+				@include flexChild(1 1 auto);
+			}
+		}
+	} // end media
+}
