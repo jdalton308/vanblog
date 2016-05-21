@@ -23,4 +23,25 @@ $(function(){
 	Landing.init();
 
 
+	var Nav = (function(){
+		var $nav = $('.side-nav');
+		var $mobileBtn = $('.mobile-nav-btn');
+		var $mobileUpBtn = $('.mobile-up-button');
+
+		function init() {
+			$mobileBtn.click(function(){
+				$nav.addClass('open');
+			});
+			$mobileUpBtn.click(function(ev){
+				ev.stopPropagation();
+				$nav.removeClass('open');
+			});
+		}
+		return {
+			init: init
+		};
+	})();
+
+	Nav.init()
+
 });
