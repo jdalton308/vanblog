@@ -30,6 +30,7 @@ body#home {
 		background-size: cover;
 		background-position: center center;
 		height: 100%;
+		box-shadow: $box-shadow-inset;
 	}
 	.landing-title {
 		position: absolute;
@@ -37,7 +38,7 @@ body#home {
 		left: 0;
 		padding: 20px 20px 25px;
 		background-color: $base-color;
-		box-shadow: $box-shadow;
+		// box-shadow: $box-shadow;
 		text-align: center;
 
 		h1,
@@ -71,7 +72,7 @@ body#home {
 			@include transform(none);
 
 			h1 {
-				font-size: 4.2rem;
+				font-size: 5.2rem;
 				color: $second-color;
 			}
 			h3 {
@@ -84,8 +85,10 @@ body#home {
 			}
 			.down-button {
 				display: inline-block;
+				padding: 10px;
 				@include centerX();
-				bottom: 20px;
+				bottom: 10px;
+				cursor: pointer;
 			}
 		}
 	}
@@ -108,14 +111,8 @@ body#home {
 			margin: 0;
 
 			@media (max-width: $mobile-small) {
-				font-size: 2.3rem
+				font-size: 2.3rem;
 			}
-		}
-		.small {
-			display: inline-block;
-			padding: 0 2px;
-			font-size: 0.7em;
-			color: $white;
 		}
 	}
 	
@@ -134,25 +131,46 @@ body#home {
 		.up-button {
 			display: none;
 		}
+		.mobile-up-button,
+		.up-button {
+			padding: 10px;
+			font-size: 2rem;
+		}
 		h1 {
-			text-shadow: $text-shadow;
 			padding: 0 20px;
 			font-size: 2rem;
+			text-shadow: $text-shadow;
 		}
 		nav {
 			.nav-item {
 				@extend h3;
 				margin: 0;
-				padding: 5px 20px 7px;
+				padding: 15px 20px 14px;
 				color: $white;
 				cursor: pointer;
+
+				.icon-arrow {
+					&:after {
+						margin-left: 5px;
+					}
+				}
+
+				.sub-nav {
+					.nav-item {
+						color: $base-color;
+					}
+				}
 			}
 		}
 	}
 	main {
 		.main-scroll {
+			background-color: $second-color;
+			box-shadow: $box-shadow-inset;
+
 			h1 {
 				margin-bottom: 50px;
+				color: $white;
 			}
 		}
 	}
@@ -166,12 +184,13 @@ body#home {
 		}
 		.side-nav {
 			position: relative;
-			box-shadow: $box-shadow;
+			// box-shadow: $box-shadow;
 			
 			.up-button {
 				display: inline-block;
 				@include centerX();
 				top: 20px;
+				cursor: pointer;
 			}
 			.mobile-up-button {
 				display: none;
@@ -182,6 +201,7 @@ body#home {
 				text-align: center;
 
 				h1 {
+					margin-bottom: 40px;
 					font-size: 2.8em;
 				}
 			}
@@ -189,9 +209,26 @@ body#home {
 				.nav-item {
 					@include transition();
 
+					.sub-nav {
+						max-height: 0;
+						overflow: hidden;
+						@include transition();
+
+						.nav-item {
+							&:hover {
+								color: $white;
+								background-color: $base-color;
+							}
+						}
+					}
+
 					&:hover {
 						background-color: $white;
 						color: $base-color;
+
+						.sub-nav {
+							max-height: 400px;
+						}
 					}
 				}
 			}
