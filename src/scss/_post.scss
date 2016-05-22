@@ -1,0 +1,27 @@
+.post {
+	margin-bottom: 20px;
+	padding: 20px;
+	background-color: $white;
+	box-shadow: $box-shadow;
+
+	.post-type,
+	.post-date {
+		display: inline-block;
+		color: $second-color;
+		margin: 0 10px 5px 0;
+	}
+	.post-title {
+		// color: $second-color;
+		margin-bottom: 5px;
+	}
+	.post-excerpt {
+		
+	}
+	.post-body {
+
+	}
+
+	@include smallMedia() {
+		margin-bottom: 40px;
+	}
+}

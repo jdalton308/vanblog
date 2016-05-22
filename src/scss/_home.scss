@@ -1,30 +1,60 @@
 
 // Home and Landing-Screen Styles
 //------------------------
+body#home {
+	@include smallMedia() {
+		position: relative;
+		top: 0;
+		height: 100vh;
+		overflow: hidden;
+		@include transition(0.6s, $curve2);
+
+		&.scroll {
+			top: -100vh;
+		}
+	}
+}
 .landing {
 	width: 100%;
+	height: 100vh;
+
+	&:after {
+		content: '';
+		display: table;
+		clear: both;
+	}
 
 	.landing-image {
 		background-image: url('/img/tahoe.jpg');
 		background-color: $second-color;
 		background-size: cover;
 		background-position: center center;
-		height: 50vh;
+		height: 100%;
+		box-shadow: $box-shadow-inset;
 	}
 	.landing-title {
-		height: 50vh;
-		position: relative;
+		position: absolute;
+		@include centerY();
+		left: 0;
+		padding: 20px 20px 25px;
 		background-color: $base-color;
-		box-shadow: $box-shadow;
-
+		// box-shadow: $box-shadow;
+		text-align: center;
 
 		h1,
 		h3 {
-			color: $second-color;
 			text-shadow: $text-shadow;
 		}
 		h1 {
-			font-size: 4.2rem;
+			font-size: 3.0rem;
+			color: $second-color;
+		}
+		h3 {
+			color: $white;
+			margin: 0;
+		}
+		.down-button {
+			display: none;
 		}
 	}
 	@include smallMedia() {
@@ -33,13 +63,32 @@
 			display: inline-block;
 			float: left;
 			width: 50%;
-			height: 100vh;
+			height: 100%;
 		}
 		.landing-title {
+			position: relative;
+			left: 0;
+			top: 0;
+			@include transform(none);
+
+			h1 {
+				font-size: 5.2rem;
+				color: $second-color;
+			}
+			h3 {
+				color: $white;
+			}
 			.title-box {
 				@include centerMe();
 				width: 90%;
 				text-align: center;
+			}
+			.down-button {
+				display: inline-block;
+				padding: 10px;
+				@include centerX();
+				bottom: 10px;
+				cursor: pointer;
 			}
 		}
 	}
@@ -47,44 +96,139 @@
 
 .featured {
 	clear: both;
+
+	.mobile-nav-btn {
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		padding: 3px 0 0;
+		background-color: $base-color;
+		text-align: center;
+		text-shadow: $text-shadow;
+
+		h1 {
+			margin: 0;
+
+			@media (max-width: $mobile-small) {
+				font-size: 2.3rem;
+			}
+		}
+	}
 	
 	.side-nav {
+		position: fixed;
+		top: -100%;
+		width: 100%;
+		padding: 10px 0 20px;
+		background-color: $base-color;
+		@include transition();
+		text-align: center;
+
+		&.open {
+			top: 0;
+		}
+		.up-button {
+			display: none;
+		}
+		.mobile-up-button,
+		.up-button {
+			padding: 10px;
+			font-size: 2rem;
+		}
 		h1 {
+			padding: 0 20px;
+			font-size: 2rem;
 			text-shadow: $text-shadow;
 		}
 		nav {
 			.nav-item {
-				padding: 5px 10px 7px;
+				@extend h3;
+				margin: 0;
+				padding: 15px 20px 14px;
 				color: $white;
 				cursor: pointer;
+
+				.icon-arrow {
+					&:after {
+						margin-left: 5px;
+					}
+				}
+
+				.sub-nav {
+					.nav-item {
+						color: $base-color;
+					}
+				}
 			}
 		}
 	}
 	main {
+		.main-scroll {
+			background-color: $second-color;
+			box-shadow: $box-shadow-inset;
 
+			h1 {
+				margin-bottom: 50px;
+				color: $white;
+			}
+		}
 	}
 	@media (min-width: $mobile) {
 		.side-nav,
 		main {
 			height: 100vh;
 		}
+		.mobile-nav-btn {
+			display: none;
+		}
 		.side-nav {
 			position: relative;
-			background-color: $base-color;
-			box-shadow: $box-shadow;
-
+			// box-shadow: $box-shadow;
+			
+			.up-button {
+				display: inline-block;
+				@include centerX();
+				top: 20px;
+				cursor: pointer;
+			}
+			.mobile-up-button {
+				display: none;
+			}
 			.side-nav-cont {
 				@include centerMe();
 				width: 100%;
 				text-align: center;
+
+				h1 {
+					margin-bottom: 40px;
+					font-size: 2.8em;
+				}
 			}
 			nav {
 				.nav-item {
 					@include transition();
 
+					.sub-nav {
+						max-height: 0;
+						overflow: hidden;
+						@include transition();
+
+						.nav-item {
+							&:hover {
+								color: $white;
+								background-color: $base-color;
+							}
+						}
+					}
+
 					&:hover {
 						background-color: $white;
 						color: $base-color;
+
+						.sub-nav {
+							max-height: 400px;
+						}
 					}
 				}
 			}

@@ -16,7 +16,8 @@ $second-color:  #6bd6f1; // light-blue
 $accent-color:  #13042b; // dark-blue
 $text-color: 	  #13042b; // dark-blue
 
-$box-shadow:    4px 2px 20px -10px $black;
+$box-shadow:    4px 2px 20px -5px $text-color;
+$box-shadow-inset:  inset 0 0 9px $text-color;
 $box-shadow-active: 	 4px 2px 20px -14px $black;
 $text-shadow: 1px 1px 1px $grey;
 
@@ -30,6 +31,7 @@ $base-font-size: 20px;
 
 //// BREAKPOINTS ////
 //-------------------
+$mobile-small: 340px;
 $mobile:    768px;
 $tablet:    1024px;
 $desktop:   1200px;
@@ -56,9 +58,9 @@ $curve3: cubic-bezier(.21,.05,.07,.99);
     @content;
   }
 }
-@mixin transition($time: 0.5s) {
-	-webkit-transition: all $time;
-	transition: all $time;
+@mixin transition($time: 0.5s, $curve: ease) {
+	-webkit-transition: all $time $curve;
+	transition: all $time $curve;
 }
 @mixin transform($props) {
   -ms-transform: $props;
