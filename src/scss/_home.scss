@@ -88,6 +88,7 @@ body#home {
 				padding: 10px;
 				@include centerX();
 				bottom: 10px;
+				font-size: 2rem;
 				cursor: pointer;
 			}
 		}
@@ -137,7 +138,7 @@ body#home {
 			font-size: 2rem;
 		}
 		h1 {
-			padding: 0 20px;
+			padding: 0 15px 5px;
 			font-size: 2rem;
 			text-shadow: $text-shadow;
 		}
@@ -184,7 +185,7 @@ body#home {
 		}
 		.side-nav {
 			position: relative;
-			// box-shadow: $box-shadow;
+			overflow-y: auto;
 			
 			.up-button {
 				display: inline-block;
@@ -196,7 +197,8 @@ body#home {
 				display: none;
 			}
 			.side-nav-cont {
-				@include centerMe();
+				// @include centerMe();
+				padding-top: 30vh;
 				width: 100%;
 				text-align: center;
 
@@ -226,8 +228,16 @@ body#home {
 						background-color: $white;
 						color: $base-color;
 
+						.icon-arrow {
+							&:after {
+								border-top-color: $second-color;
+							}
+						}
+							
+
 						.sub-nav {
 							max-height: 400px;
+							margin-top: 10px;
 						}
 					}
 				}
