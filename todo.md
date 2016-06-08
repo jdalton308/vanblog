@@ -3,7 +3,9 @@ TODO:
 XX Set-up Webpack or Browserify
 XXBuild landing animation
 XX- Using flat and layered designs, have a little van driving in front of mountains and oceans.
-- Correct color palate
+XX- Correct color palate
+
+Redo page transitions to not use overlay
 
 Build about page
 - Add Google maps, with custom coloring
@@ -12,8 +14,6 @@ Build sample category page
 Build Sample Post pages
 - One for images
 - One for standard article (basically style figures, lists, paragraphs, and headers)
-
-Redo page transitions to not use overlay
 
 Build Connect page
 - Pull-in instagram feed?

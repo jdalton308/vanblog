@@ -11,7 +11,7 @@ var oldHash = '/';
 
 // Elements
 var $pageContainer = $('.main-wrapper');
-var $loader = $('.main-loader');
+// var $loader = $('.main-loader');
 
 
 function getPage(target) {
@@ -20,14 +20,14 @@ function getPage(target) {
 	console.log('File Path: '+ filePath);
 
 	// 1. Show loader
-	$loader.addClass('show');
+	// $loader.addClass('show');
 	var pageLoaded = false;
-	var loaderInterval = window.setInterval(function(){
-		if (pageLoaded) {
-			window.clearInterval(loaderInterval);
-			$loader.removeClass('show');
-		}
-	}, 1300);
+	// var loaderInterval = window.setInterval(function(){
+	// 	if (pageLoaded) {
+	// 		window.clearInterval(loaderInterval);
+	// 		$loader.removeClass('show');
+	// 	}
+	// }, 1300);
 
 	// 2. Get new file
 	return $.get(filePath).then(
