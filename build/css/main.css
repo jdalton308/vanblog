@@ -198,7 +198,12 @@ section > h3, .content .side-nav nav section > .nav-item {
         color: #f24b4b; }
         .content .side-nav nav .nav-item:hover .icon-arrow:after {
           border-top-color: #6bd6f1; }
-        .content .side-nav nav .nav-item:hover .sub-nav {
+      .content .side-nav nav .nav-item.open {
+        background-color: #FFF;
+        color: #f24b4b; }
+        .content .side-nav nav .nav-item.open .icon-arrow:after {
+          border-top-color: #6bd6f1; }
+        .content .side-nav nav .nav-item.open .sub-nav {
           max-height: 400px;
           margin-top: 10px; } }
 
@@ -483,7 +488,7 @@ section > h3, .content .side-nav nav section > .nav-item {
       left: 250px;
       width: 39%;
       height: 58%;
-      background-color: #B64926;
+      background-color: #BF5428;
       box-shadow: -3px 0 20px -8px #666;
       -ms-transform: rotate(45deg);
       -webkit-transform: rotate(45deg);
@@ -520,15 +525,15 @@ section > h3, .content .side-nav nav section > .nav-item {
       top: 3%;
       width: 16vh;
       height: 16vh;
-      background-color: #FFB038;
+      background-color: #F97741;
       border-radius: 50%;
-      box-shadow: 0 0 20px 5px #FFB038; }
+      box-shadow: 0 0 20px 5px #F97741; }
     .landing .landing-image .ground {
       position: absolute;
       bottom: -28%;
       height: 38%;
       width: 75%;
-      background-color: #4d801a;
+      background-color: #12A53C;
       border-radius: 50%;
       box-shadow: 0 0 25px -5px #000; }
       .landing .landing-image .ground.one {
@@ -540,15 +545,13 @@ section > h3, .content .side-nav nav section > .nav-item {
         left: -34%;
         bottom: -33%;
         width: 92%;
-        background-color: #13042b; }
+        background-color: #2885BF; }
       .landing .landing-image .ground .van {
         position: absolute;
         width: 50px;
         height: 36px;
         top: -30px;
-        left: calc(50% - 50px);
-        -webkit-animation: vanDrive 3s ease 5s infinite normal forwards;
-        animation: vanDrive 3s ease 5s infinite normal forwards; }
+        left: calc(50% - 50px); }
         .landing .landing-image .ground .van div {
           position: absolute;
           display: inline-block; }
@@ -575,7 +578,7 @@ section > h3, .content .side-nav nav section > .nav-item {
         .landing .landing-image .ground .van .window {
           top: 2px;
           right: 7px;
-          border-left: 7.5px solid #666;
+          border-left: 7.5px solid #000;
           border-top: 15px solid transparent; }
         .landing .landing-image .ground .van .wheel {
           width: 12px;

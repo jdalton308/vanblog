@@ -256,7 +256,7 @@ $wheelSize: 12px;
 			bottom: -28%;
 			height: 38%;
 			width: 75%;
-			background-color: lighten($dark-green, 10%);
+			background-color: $dark-green;
 			border-radius: 50%;
 			box-shadow: 0 0 25px -5px $black;
 
@@ -271,7 +271,7 @@ $wheelSize: 12px;
 				left: -34%;
 				bottom: -33%;
 				width: 92%;
-				background-color: $accent-color;
+				background-color: $blue;
 			}
 
 			.van {
@@ -280,7 +280,7 @@ $wheelSize: 12px;
 				height: ($vanHeight + ($wheelSize/2) );
 				top: -$vanHeight;
 				left: calc(50% - #{$vanWidth});
-				@include animation(vanDrive, 3s, ease, 5s, infinite);
+				// @include animation(vanDrive, 3s, ease, 5s, infinite);
 
 				div {
 					position: absolute;
@@ -306,14 +306,13 @@ $wheelSize: 12px;
 					right: 0;
 					width: 0;
 					height: 0;
-					// background-color: $white;
 					border-left: ($vanWidth * 0.2) solid $white;
 					border-top: $vanHeight solid transparent;
 				}
 				.window {
 					top: 2px;
 					right: ($vanWidth * 0.14);
-					border-left: ($vanWidth * 0.15) solid $grey;
+					border-left: ($vanWidth * 0.15) solid $black;
 					border-top: ($vanHeight * 0.5) solid transparent;
 				}
 				.wheel {

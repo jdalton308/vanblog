@@ -124,7 +124,16 @@
 								border-top-color: $second-color;
 							}
 						}
-							
+					}
+					&.open {
+						background-color: $white;
+						color: $base-color;
+
+						.icon-arrow {
+							&:after {
+								border-top-color: $second-color;
+							}
+						}
 
 						.sub-nav {
 							max-height: 400px;
