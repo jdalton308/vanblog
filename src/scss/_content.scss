@@ -1,0 +1,78 @@
+
+// Home Styles
+//------------------------
+body#home {
+	@include smallMedia() {
+		position: relative;
+		top: 0;
+		height: 100vh;
+		overflow: hidden;
+		@include transition(0.6s, $curve2);
+
+		&.scroll {
+			top: -100vh;
+		}
+	}
+}
+
+.content {
+	clear: both;
+
+	main {
+		position: relative;
+		z-index: -1;
+
+		.main-scroll {
+			background-color: $second-color;
+			box-shadow: $box-shadow-inset;
+
+			h1 {
+				margin-bottom: 50px;
+				color: $white;
+			}
+		}
+		.main-loader {
+			position: absolute;
+			right: 100%;
+			top: 0;
+			width: 100%;
+			height: 100%;
+			background-color: $white;
+			color: $second-color;
+			font-size: 2rem;
+			@include transition(0.3s);
+
+			&.show {
+				right: 0;
+			}
+
+			.loader-text {
+				display: inline-block;
+				@include centerMe();
+				text-align: center;
+			}
+		}
+	}
+	@media (min-width: $mobile) {
+		main {
+			height: 100vh;
+
+			.main-scroll {
+				height: 100%;
+				overflow-y: auto;
+			}
+		}
+
+		// Flexbox layout...
+		@include canFlex() {
+			@include flexParent();
+
+			.side-nav {
+				@include flexChild(0 1 30vw);
+			}
+			main {
+				@include flexChild(1 1 auto);
+			}
+		}
+	} // end media
+}

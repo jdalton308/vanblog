@@ -6,17 +6,21 @@ var concat = require('gulp-concat');
 var uglify = require('gulp-uglify');
 var htmlMin = require('gulp-htmlmin');
 var server = require('gulp-server-livereload');
+var browserify = require('browserify');
+var source = require('vinyl-source-stream');
+var streamify = require('gulp-streamify');
+
 
 var styleFiles = [
         './src/scss/main.scss'
     ];
-var jsFiles = [
-		'node_modules/jquery/dist/jquery.min.js',
-		'./src/js/**/*.js'
-	];
+// var jsFiles = [
+// 		'node_modules/jquery/dist/jquery.min.js',
+// 		'./src/js/**/*.js'
+// 	];
 var htmlFiles = [
 		'./src/html/**/*.html'
-]
+	];
 
 
 gulp.task('styles', function() {
@@ -27,9 +31,12 @@ gulp.task('styles', function() {
 });
 
 gulp.task('scripts', function(){
-	gulp.src(jsFiles)
-		.pipe(concat('app.js'))
-		.pipe(uglify())
+	// gulp.src(jsFiles)
+	browserify('./src/js/app.js').bundle()
+		// .pipe(concat('app.js'))
+		// .pipe(uglify())
+		.pipe(source('app.js'))
+		.pipe(streamify(uglify()))
 		.pipe(gulp.dest('./build/js/'))
 		.on('error', gutil.log);
 });

@@ -1,0 +1,138 @@
+
+.content {
+	.mobile-nav-btn {
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		padding: 3px 0 0;
+		background-color: $base-color;
+		text-align: center;
+		text-shadow: $text-shadow;
+
+		h1 {
+			margin: 0;
+
+			@media (max-width: $mobile-small) {
+				font-size: 2.3rem;
+			}
+		}
+	}
+	
+	.side-nav {
+		position: fixed;
+		top: -100%;
+		width: 100%;
+		padding: 10px 0 20px;
+		background-color: $base-color;
+		@include transition();
+		text-align: center;
+
+		&.open {
+			top: 0;
+		}
+		.up-button {
+			display: none;
+		}
+		.mobile-up-button,
+		.up-button {
+			padding: 10px;
+			font-size: 2rem;
+		}
+		h1 {
+			padding: 0 15px 5px;
+			font-size: 2rem;
+			text-shadow: $text-shadow;
+		}
+		nav {
+			.nav-item {
+				display: block;
+				@extend h3;
+				margin: 0;
+				padding: 15px 20px 14px;
+				color: $white;
+				cursor: pointer;
+
+				.icon-arrow {
+					&:after {
+						margin-left: 5px;
+					}
+				}
+
+				.sub-nav {
+					.nav-item {
+						color: $base-color;
+					}
+				}
+			}
+		}
+	}
+	@media (min-width: $mobile) {
+		.side-nav {
+			height: 100vh;
+		}
+		.mobile-nav-btn {
+			display: none;
+		}
+		.side-nav {
+			position: relative;
+			overflow-y: auto;
+			
+			.up-button {
+				display: inline-block;
+				@include centerX();
+				top: 20px;
+				cursor: pointer;
+			}
+			.mobile-up-button {
+				display: none;
+			}
+			.side-nav-cont {
+				// @include centerMe();
+				padding-top: 30vh;
+				width: 100%;
+				text-align: center;
+
+				h1 {
+					margin-bottom: 40px;
+					font-size: 2.8em;
+				}
+			}
+			nav {
+				.nav-item {
+					@include transition();
+
+					.sub-nav {
+						max-height: 0;
+						overflow: hidden;
+						@include transition();
+
+						.nav-item {
+							&:hover {
+								color: $white;
+								background-color: $base-color;
+							}
+						}
+					}
+
+					&:hover {
+						background-color: $white;
+						color: $base-color;
+
+						.icon-arrow {
+							&:after {
+								border-top-color: $second-color;
+							}
+						}
+							
+
+						.sub-nav {
+							max-height: 400px;
+							margin-top: 10px;
+						}
+					}
+				}
+			}
+		}
+	} // end media
+}
