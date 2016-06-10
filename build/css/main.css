@@ -823,6 +823,13 @@ section > h3, .content .side-nav nav section > .nav-item {
     margin: 0 10px 5px 0; }
   .post .post-title {
     margin-bottom: 5px; }
+  .post .map-canvas {
+    width: 100%;
+    height: 90vw;
+    background-color: #666; }
   @media (min-width: 768px) {
     .post {
       margin-bottom: 40px; } }
+  @media (min-width: 768px) {
+    .post .map-canvas {
+      height: 500px; } }
