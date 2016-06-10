@@ -23,8 +23,7 @@ Build Connect page
 
 Build Node.js server
 - Routing
-  - Use JSON to store “URL name”: “file path” key-pairs
-- Modules: Renderer, router
+  - See Google Doc for planning
 
 Add FB/Twitter sharing to each post
 Add FB/Twitter sharing to site

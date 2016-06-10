@@ -17,27 +17,12 @@ var $pageContainer = $('.main-wrapper');
 function getPage(target) {
 	var filePath = '/pages/' + target + ".html";
 
-	console.log('File Path: '+ filePath);
-
-	// 1. Show loader
-	// $loader.addClass('show');
-	var pageLoaded = false;
-	// var loaderInterval = window.setInterval(function(){
-	// 	if (pageLoaded) {
-	// 		window.clearInterval(loaderInterval);
-	// 		$loader.removeClass('show');
-	// 	}
-	// }, 1300);
-
 	// 2. Get new file
 	return $.get(filePath).then(
 		// success
 		function(response) {
 			// 3. inset HTML into page
 			$pageContainer.html(response);
-
-			// hide loader
-			pageLoaded = true;
 		},
 		// error
 		function(error) {
@@ -51,7 +36,7 @@ function getPage(target) {
 
 function readHash() {
 	// Interpret hash
-	var newHash = window.location.hash.substr(2) || '/latest';
+	var newHash = window.location.hash.substr(2) || 'latest';
 
 	console.log('newHash: '+ newHash);
 
