@@ -86,8 +86,6 @@ $wheelSize: 12px;
 		top: 10%;
 	}
 }
-
-
 @include keyframes(flyAroundThree) {
 	0% {
 		left: 90%;
@@ -108,6 +106,32 @@ $wheelSize: 12px;
 	100% {
 		left: 20%;
 		top: 10%;
+	}
+}
+@include keyframes(flyAroundUser) {
+	0% {
+		top: 0;
+		left: 0;
+	}
+	20% {
+		top: -20px;
+		left: -20px;
+	}
+	40% {
+		top: -5px;
+		left: 30px;
+	}
+	50% {
+		top: -10px;
+		left: 10px;
+	}
+	70% {
+		top: 30px;
+		left: -10px;
+	}
+	100% {
+		top: 0;
+		left: 0;
 	}
 }
 @include keyframes(vanDrive) {
@@ -379,6 +403,14 @@ $wheelSize: 12px;
 
 					@include animation(flapLeft, $flapTime, ease, 0s, infinite);
 				}
+			}
+		}
+		.bird-holder {
+			position: absolute;
+
+			.bird {
+				position: relative;
+				@include animation(flyAroundUser, 10s, linear, 0s, infinite, alternate);
 			}
 		}
 

@@ -5,6 +5,8 @@ XXBuild landing animation
 XX- Using flat and layered designs, have a little van driving in front of mountains and oceans.
 XX- Correct color palate
 
+- Add click behavior to landing screen
+
 Redo page transitions to not use overlay
 
 Build about page
@@ -21,9 +23,10 @@ Build Connect page
 - Create own Twitter?
 - Create FB page?
 
-Build Node.js server
-- Routing
-  - See Google Doc for planning
+XBuild Node.js server
+X- Routing
+X  - See Google Doc for planning
+- Hide landing screen if not at '/' or '/home'
 
 Add FB/Twitter sharing to each post
 Add FB/Twitter sharing to site

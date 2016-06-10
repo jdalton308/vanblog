@@ -377,6 +377,46 @@ section > h3, .content .side-nav nav section > .nav-item {
     left: 20%;
     top: 10%; } }
 
+@-webkit-keyframes flyAroundUser {
+  0% {
+    top: 0;
+    left: 0; }
+  20% {
+    top: -20px;
+    left: -20px; }
+  40% {
+    top: -5px;
+    left: 30px; }
+  50% {
+    top: -10px;
+    left: 10px; }
+  70% {
+    top: 30px;
+    left: -10px; }
+  100% {
+    top: 0;
+    left: 0; } }
+
+@keyframes flyAroundUser {
+  0% {
+    top: 0;
+    left: 0; }
+  20% {
+    top: -20px;
+    left: -20px; }
+  40% {
+    top: -5px;
+    left: 30px; }
+  50% {
+    top: -10px;
+    left: 10px; }
+  70% {
+    top: 30px;
+    left: -10px; }
+  100% {
+    top: 0;
+    left: 0; } }
+
 @-webkit-keyframes vanDrive {
   0% {
     -ms-transform: translateX(0);
@@ -629,6 +669,12 @@ section > h3, .content .side-nav nav section > .nav-item {
           background: radial-gradient(ellipse at 20% 100%, rgba(204, 255, 255, 0) 45%, #404040 50%);
           -webkit-animation: flapLeft 0.3s ease 0s infinite normal forwards;
           animation: flapLeft 0.3s ease 0s infinite normal forwards; }
+    .landing .landing-image .bird-holder {
+      position: absolute; }
+      .landing .landing-image .bird-holder .bird {
+        position: relative;
+        -webkit-animation: flyAroundUser 10s linear 0s infinite alternate forwards;
+        animation: flyAroundUser 10s linear 0s infinite alternate forwards; }
   .landing .landing-title {
     position: absolute;
     position: absolute;
