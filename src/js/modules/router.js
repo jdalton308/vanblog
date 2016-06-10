@@ -4,24 +4,20 @@
 // - Watches for URL hash changes, then loads pages through AJAX
 
 var $ = require('jquery');
+var pathRef = require('../server/server-path-ref.js');
 
-
-// State variables
-var oldHash = '/';
-
-// Elements
 var $pageContainer = $('.main-wrapper');
-// var $loader = $('.main-loader');
 
 
-function getPage(target) {
-	var filePath = '/pages/' + target + ".html";
+function getPage(path) {
 
-	// 2. Get new file
-	return $.get(filePath).then(
+	var realPath = pathRef[path];
+
+	// Get new file
+	return $.get(realPath).then(
 		// success
 		function(response) {
-			// 3. inset HTML into page
+			// Inset HTML into page
 			$pageContainer.html(response);
 		},
 		// error
@@ -29,34 +25,38 @@ function getPage(target) {
 			// Show 404 page?
 			console.error(error);
 
-			getPage('404');
+			getPage('/404');
 		}
 	);
 }
 
-function readHash() {
-	// Interpret hash
-	var newHash = window.location.hash.substr(2) || 'latest';
-
-	console.log('newHash: '+ newHash);
+function loadTarget(path) {
 
 	// If new...
-	if (newHash != oldHash) {
+	if (path != window.location.pathname) {
+
 		// get new page
-		getPage(newHash);
-	
-		// set oldHash
-		oldHash = newHash;
+		getPage(path).then(function(){
+			// set new URL // pushHistory()?
+			// window.location.pathname = path;
+			window.history.pushState('', path, path);
+		});
 	}
 }
 
 function init() {
-	window.addEventListener("hashchange", function(e) {
+	var $internalLinks = $('a[href!="www"]');
+
+	$internalLinks.click(function(e){
 		e.preventDefault();
-		readHash();
+		var targetPath = $(this).attr('href');
+		loadTarget(targetPath);
 	});
 
-	readHash();
+	window.onpopstate - function(e){
+		var location = window.location.pathname;
+		loadTarget(location);
+	};
 }
 
 module.exports = init;

@@ -18,6 +18,9 @@ var styleFiles = [
 // 		'node_modules/jquery/dist/jquery.min.js',
 // 		'./src/js/**/*.js'
 // 	];
+var serverFiles = [
+		'./src/js/server/**/*.js'
+	];
 var htmlFiles = [
 		'./src/html/**/*.html'
 	];
@@ -41,6 +44,11 @@ gulp.task('scripts', function(){
 		.on('error', gutil.log);
 });
 
+gulp.task('server-scripts', function(){
+	gulp.src(serverFiles)
+		.pipe(gulp.dest('./build/'));
+});
+
 gulp.task('html', function(){
 	gulp.src(htmlFiles)
 		.pipe(htmlMin({
@@ -59,10 +67,11 @@ gulp.task('server', function(){
 
 gulp.task('watch', function(){
     gulp.watch(['./src/scss/**/*.scss'], ['styles']);
-    gulp.watch(['./src/js/**/*.js'], ['scripts']);
+    gulp.watch(['./src/js/**/*.js'], ['scripts', 'server-scripts']);
     gulp.watch(['./src/html/**/*.html'], ['html'])
 });
 
-gulp.task('build', ['styles', 'scripts', 'html']);
+gulp.task('build', ['styles', 'scripts', 'server-scripts', 'html']);
 
-gulp.task('default', ['build', 'watch', 'server']);
+// gulp.task('default', ['build', 'watch', 'server']);
+gulp.task('default', ['build', 'watch']);
