@@ -9,9 +9,6 @@ var $downBtn = $('.down-button');
 var $upBtn = $('.up-button');
 
 function createBird(e) {
-	console.log('Event:');
-	console.log(e);
-
 	var xpos = e.clientX;
 	var ypos = e.clientY;
 

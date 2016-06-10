@@ -6,7 +6,8 @@
 var $ = require('jquery');
 var pathRef = require('../server/server-path-ref.js');
 
-var $pageContainer = $('.main-wrapper');
+
+var $pageContainer = $('main');
 
 
 function getPage(path) {
@@ -18,7 +19,15 @@ function getPage(path) {
 		// success
 		function(response) {
 			// Inset HTML into page
-			$pageContainer.html(response);
+			var $nextPage = $('<div class="main-scroll next-page"><div class="main-wrapper"></div></div>');
+			$nextPage.children('.main-wrapper').html(response);
+			$pageContainer.append($nextPage);
+
+			// Wait 1 second, then remove old page and reset for next load
+			window.setTimeout(function(){
+				$pageContainer.find('.main-scroll:not(.next-page)').remove();
+				$nextPage.removeClass('next-page');
+			}, 1000);
 		},
 		// error
 		function(error) {
@@ -37,9 +46,7 @@ function loadTarget(path) {
 
 		// get new page
 		getPage(path).then(function(){
-			// set new URL // pushHistory()?
-			// window.location.pathname = path;
-			window.history.pushState('', path, path);
+			window.history.pushState('', path, path); // state object, title, path
 		});
 	}
 }
