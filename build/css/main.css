@@ -833,3 +833,18 @@ section > h3, .content .side-nav nav section > .nav-item {
   @media (min-width: 768px) {
     .post .map-canvas {
       height: 500px; } }
+
+a.post {
+  display: block;
+  width: 100%;
+  color: #13042b;
+  text-decoration: none; }
+  @media (min-width: 768px) {
+    a.post {
+      -webkit-transition: all 0.5s ease;
+      transition: all 0.5s ease; }
+      a.post:hover {
+        -ms-transform: scale(1.01);
+        -webkit-transform: scale(1.01);
+        transform: scale(1.01);
+        box-shadow: 4px 2px 20px -4px #13042b; } }

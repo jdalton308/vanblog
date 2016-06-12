@@ -36,3 +36,18 @@
 		}
 	}
 }
+a.post {
+	display: block;
+	width: 100%;
+	color: $text-color;
+	text-decoration: none;
+
+	@media (min-width: $mobile) {
+		@include transition(0.5s);
+
+		&:hover {
+			@include transform( scale(1.01) );
+			box-shadow: 4px 2px 20px -4px $text-color;
+		}		
+	}
+}

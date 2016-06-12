@@ -19,7 +19,7 @@ const pathRef = require('./server-path-ref.js');
 // Utility Functions
 //------------------------------
 function isStaticFile(path) {
-	let dotRegEx = /[a-z]\.[a-z]/i;
+	let dotRegEx = /[a-z0-9]\.[a-z]/i;
 	return dotRegEx.test(path);
 }
 function isCatRequest(path) {
@@ -64,7 +64,11 @@ function requestHome(path, res) {
 		}
 
 		// Decide what content goes into home
-		let targetPath = pathRef[path] || '/pages/404.html';
+		let targetPath = pathRef[path];
+		if (targetPath == null || targetPath == undefined) {
+			targetPath = '/pages/404.html';
+		}
+
 		let targetContent;
 
 		// Fetch content OR render content
@@ -94,7 +98,7 @@ function route(req, res) {
 
 	// Standard static file request
 	if (isStaticFile(requestPath)) {
-		console.log('Request contains a file extension');
+		console.log('Request for static file');
 		return requestStaticFile('.'+ requestPath, res);
 
 	// Request for generated category page
@@ -105,7 +109,7 @@ function route(req, res) {
 
 	// Home request
 	} else {
-		console.log('Request was sent index.html');
+		console.log('Request for home variant');
 		return requestHome(requestPath, res);
 	}
 }

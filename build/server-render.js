@@ -19,10 +19,10 @@ function createPostHTML(postObj, template) {
 }
 
 function renderCat(path){
-	console.log('renderCat() called');
+	// console.log('renderCat() called');
 
 	let category = path.replace('/cat/', '');
-	console.log('category: '+ category);
+	// console.log('category: '+ category);
 
 	// Get template for post summary
 	let templateHTML = fs.readFileSync(postTemplatePath, 'utf8');
@@ -32,12 +32,12 @@ function renderCat(path){
 
 	// - Loop through posts, and create HTML
 	for (let i = 0; i < postRef.length; i++) {
-	// for (let post of postRef) {
+
 		let post = postRef[i];
 		let postCategories = post.categories;
 
 		if (postCategories.indexOf(category) != -1 || category === 'All' || category === 'Latest') {
-			console.log('Post found: '+ post.name);
+
 			let postHTML = createPostHTML(post, templateHTML);
 			
 			pageHTML += postHTML;

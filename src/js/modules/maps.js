@@ -77,6 +77,7 @@ var locations = [
 //--------------------
 // TODO: 
 // - List cities
+// - Draw line bewteen points. On road?
 // - Color map
 function drawMap() {
 	var canvas = document.getElementById('map-canvas');

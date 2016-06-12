@@ -10,7 +10,7 @@ let posts = [
 		'date': '01.03.16',
 		'categories': ['Van', 'Travel', 'Climbing'],
 		// 'thumbnail': '/path/to/thumbnail'(?),
-		'location': '/posts/post-1',
+		'link': '/blog/post-1',
 		'description': 'This is a short description of post 1'
 	},
 	{
@@ -18,7 +18,7 @@ let posts = [
 		'date': '01.30.16',
 		'categories': ['Van', 'Travel'],
 		// 'thumbnail': '/path/to/thumbnail'(?),
-		'location': '/posts/post-2',
+		'link': '/blog/post-2',
 		'description': 'This is a short description of post 2'
 	},
 	{
@@ -26,7 +26,7 @@ let posts = [
 		'date': '03.07.16',
 		'categories': ['Van', 'Climbing'],
 		// 'thumbnail': '/path/to/thumbnail'(?),
-		'location': '/posts/post-3',
+		'link': '/blog/post-3',
 		'description': 'This is a short description of post 3'
 	}
 ];
