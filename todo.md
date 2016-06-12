@@ -6,6 +6,8 @@ Launch criteria:
 - Route page up
 - No server crashes from requests
 - Security added to server
+X- Email
+
 
 TODO:
 
@@ -19,17 +21,18 @@ XX- Redo page transitions to not use overlay
 XX- Make posts clickable in Category pages
 
 Build Route page
-- Add Google maps, with custom coloring
+X- Add Google maps
+- Add custom coloring
+- Create list of spots
 
 XXBuild sample category page
 Build Sample Post pages
 - One for standard article (basically style figures, lists, paragraphs, images, and headers)
 
 Build Connect page
-- Pull-in instagram feed?
-- Create own IG?
-- Create own Twitter?
-- Create FB page?
+- Email
+- Pull-in instagram feed
+- Email Signup
 
 XXBuild Node.js server
 XX- Routing

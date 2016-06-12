@@ -80,9 +80,10 @@ var locations = [
 // - Draw line bewteen points. On road?
 // - Color map
 function drawMap() {
+	console.log('Drawing map...');
 	var canvas = document.getElementById('map-canvas');
 	var mapOptions = {
-		center: {lat: -34.397, lng: 150.644},
+		center: {lat:37.8715926, lng:-122.27274699999998},
 		zoom: 8
 	};
 
@@ -93,10 +94,17 @@ function drawMap() {
 
 // Drop markers for places
 function setMarkers(markerArray, map) {
+	console.log('Setting markers...');
+
+	var bounds = new google.maps.LatLngBounds();
+
 	markerArray.forEach(function(markerObj, i){
 		var newMarker = new google.maps.Marker(markerObj);
 		newMarker.setMap(map);
+		bounds.extend(newMarker.position);
 	});
+
+	map.fitBounds(bounds);
 }
 
 function init() {
