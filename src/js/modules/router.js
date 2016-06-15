@@ -59,6 +59,14 @@ function loadTarget(path) {
 	});
 }
 
+function checkInitialLoad() {
+	var currentPath = window.location.pathname;
+	if (currentPath !== '/' && currentPath !== '/home') {
+		// If home, then move page down
+		$('body').addClass('scroll');
+	}
+}
+
 function init() {
 	var $internalLinks = $('a[href!="www"]');
 	var $window = $(window);
@@ -76,6 +84,8 @@ function init() {
 		var location = window.location.pathname;
 		loadTarget(location);
 	});
+
+	checkInitialLoad();
 }
 
 module.exports = init;

@@ -1,1 +1,7 @@
-This is a prototype and theme for the van blog
+#Van Blog
+
+###Creating a new post
+1. Write the post
+2. Save the file as `[overall post #]-[main category]-[title]`. For example, `1-van-modelchoice.html`.
+3. Update the `server-post-ref.js` file with post details
+4. Update the `server-path-ref.js` file, after deciding on the URL to be used

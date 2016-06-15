@@ -1,12 +1,12 @@
 Launch Date: June 17
 Launch criteria:
-- Ads up
 - All van build posts completed
+X- Route page up
+- Email signup
+- Ads up
 - Analytics up
-- Route page up
 - No server crashes from requests
 - Security added to server
-X- Email
 
 
 TODO:
@@ -25,9 +25,9 @@ X- Add Google maps
 - Add custom coloring
 - Create list of spots
 
-XXBuild sample category page
-Build Sample Post pages
-- One for standard article (basically style figures, lists, paragraphs, images, and headers)
+XX Build sample category page
+XXBuild Sample Post pages
+XX- Basically style figures, lists, paragraphs, images, and headers
 
 Build Connect page
 - Email
@@ -38,7 +38,7 @@ XXBuild Node.js server
 XX- Routing
 XX - See Google Doc for planning
 
-- Hide landing screen if not at '/' or '/home'
+XX- Hide landing screen if not at '/' or '/home'
 
 Add FB/Twitter sharing to each post
 Add FB/Twitter sharing to site
@@ -46,6 +46,7 @@ Google Analytics
 Google AdSense
 - Ads in each article
 404 page
+
 Favicon: Tiny van OR 'J+V'
 
 Make real posts:

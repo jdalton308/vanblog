@@ -24,6 +24,7 @@ var pathRef = {
 	'/blog/post-1': '/posts/ex-post-1.html',
 	'/blog/post-2': '/posts/ex-post-2.html',
 	'/blog/post-3': '/posts/ex-post-3.html',
+	'/blog/van-model': '/posts/1-van-modelchoice.html',
 }
 
 module.exports = pathRef;

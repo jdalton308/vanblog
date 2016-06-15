@@ -28,6 +28,14 @@ let posts = [
 		// 'thumbnail': '/path/to/thumbnail'(?),
 		'link': '/blog/post-3',
 		'description': 'This is a short description of post 3'
+	},
+	{
+		'name': 'Van Build: Van Selection',
+		'date': '6.1.2016',
+		'categories': ['Van'],
+		// 'thumbnail': '/path/to/thumbnail'(?),
+		'link': '/blog/van-model',
+		'description': 'Some of the van models I considered when shopping, and the important features I took into account.'
 	}
 ];
 
