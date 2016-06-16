@@ -68,8 +68,13 @@ function checkInitialLoad() {
 }
 
 function init() {
-	var $internalLinks = $('a[href!="www"]');
+	var $internalLinks = $('a').filter(function(i){
+		return this.hostname === window.location.hostname;
+	});
 	var $window = $(window);
+
+	console.log('Internal links:');
+	console.log($internalLinks);
 
 	$internalLinks.off('click');
 	$internalLinks.click(function(e){
