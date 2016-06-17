@@ -926,6 +926,11 @@ section > h3, .content .side-nav nav section > .nav-item {
   @media (min-width: 768px) {
     .post.map #map-canvas {
       height: 500px; } }
+  .post.connect .connect-item {
+    margin: 0 0 40px;
+    text-align: center; }
+    .post.connect .connect-item h4 {
+      margin: 0 0 5px; }
   @media (min-width: 768px) {
     .post {
       margin-bottom: 40px; } }

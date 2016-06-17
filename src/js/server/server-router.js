@@ -2,6 +2,7 @@
 
 // Routing/API:
 // - For lists of latest posts, request == '/cat/:category'
+// - For Instagram API, request == '/instagram'
 // - For static files, include a file extension
 // - All other requests refer to 'server-path-ref.js'
 
@@ -14,6 +15,7 @@ const fs = require('fs');
 const postRef = require('./server-post-ref.js');
 const render = require('./server-render.js');
 const pathRef = require('./server-path-ref.js');
+const instagram = require('./server-instagram.js');
 
 
 // Utility Functions
@@ -24,6 +26,10 @@ function isStaticFile(path) {
 }
 function isCatRequest(path) {
 	let catRegEx = /\/cat\//i;
+	return catRegEx.test(path);
+}
+function isIGRequest(path) {
+	let catRegEx = /\/instagram/i;
 	return catRegEx.test(path);
 }
 
@@ -106,6 +112,11 @@ function route(req, res) {
 		// Render the category HTML
 		console.log('Category page request');
 		return requestCatSummary(requestPath, res);
+
+	// Request for Instagram photos
+	} else if (isIGRequest(requestPath)){
+		console.log('Request for IG photos');
+		return instagram(res);
 
 	// Home request
 	} else {

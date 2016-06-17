@@ -6,6 +6,7 @@
 var $ = require('jquery');
 var maps = require('./maps.js');
 var pathRef = require('../server/server-path-ref.js');
+var connect = require('./connect.js');
 
 
 var $pageContainer = $('main');
@@ -33,6 +34,8 @@ function getPage(path) {
 
 			if (path == '/route') {
 				maps();
+			} else if (path === '/connect') {
+				connect();
 			}
 
 			// Wait 1 second, then remove old page and reset for next load
@@ -64,6 +67,10 @@ function checkInitialLoad() {
 	if (currentPath !== '/' && currentPath !== '/home') {
 		// If home, then move page down
 		$('body').addClass('scroll');
+	} else if (currentPath === '/route') {
+		maps();
+	} else if (currentPath === '/connect') {
+		connect();
 	}
 }
 
@@ -73,8 +80,6 @@ function init() {
 	});
 	var $window = $(window);
 
-	console.log('Internal links:');
-	console.log($internalLinks);
 
 	$internalLinks.off('click');
 	$internalLinks.click(function(e){

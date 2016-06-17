@@ -29,6 +29,8 @@
     "vinyl-source-stream": "^1.1.0"
   },
   "dependencies": {
-    "gulp-concat": "^2.6.0"
+    "gulp-concat": "^2.6.0",
+    "instagram-api": "^1.0.0",
+    "instagram-node": "^0.5.8"
   }
 }

@@ -20,19 +20,20 @@ XX- Add click behavior to landing screen
 XX- Redo page transitions to not use overlay
 XX- Make posts clickable in Category pages
 
-Build Route page
-X- Add Google maps
-- Add custom coloring
-- Create list of spots
+XXBuild Route page
+XX- Add Google maps
+XX- Add custom coloring
+XX- Create list of spots
 
 XX Build sample category page
 XXBuild Sample Post pages
 XX- Basically style figures, lists, paragraphs, images, and headers
 
 Build Connect page
-- Email
+XX- Email
+- Add email and IG icons
+- Email Signup styled
 - Pull-in instagram feed
-- Email Signup
 
 XXBuild Node.js server
 XX- Routing
@@ -51,7 +52,7 @@ Favicon: Tiny van OR 'J+V'
 
 Make real posts:
 - Van:
-	- Model choice
+X	- Model choice
 	- Planning
 	- Carpentry
 	- Electrical
