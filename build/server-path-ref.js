@@ -21,10 +21,9 @@ var pathRef = {
 	'/blog/latest': '/cat/Latest',
 
 	// Posts
-	'/blog/post-1': '/posts/ex-post-1.html',
-	'/blog/post-2': '/posts/ex-post-2.html',
-	'/blog/post-3': '/posts/ex-post-3.html',
 	'/blog/van-model': '/posts/1-van-modelchoice.html',
+	'/blog/van-carpentry': '/posts/2-van-carpentry.html',
+	'/blog/van-build-resources': '/posts/7-van-other_resources.html'
 }
 
 module.exports = pathRef;

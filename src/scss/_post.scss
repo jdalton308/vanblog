@@ -128,6 +128,81 @@
 				margin: 0 0 5px;
 			}
 		}
+		.latest-ig-posts {
+			a.ig-link {
+				display: block;
+				width: 100%;
+				padding: 15px 15px 20px;
+				margin: 0 0 40px;
+				box-shadow: 2px 4px 15px -2px $grey;
+				text-decoration: none;
+
+				img {
+					display: block;
+					width: 100%;
+					margin-bottom: 10px;
+				}
+				h4 {
+					&.caption {
+						margin: 0 0 10px;
+					}
+					&.location {
+						margin: 0;
+						// padding: 10px 0 0;
+						text-align: right;
+						font-size: 0.9rem;
+						color: $second-color;
+					}
+				}
+			}
+		}
+		form.validate {
+			.name-row {
+				width: 100%;
+
+				label {
+					display: inline-block;
+					width: 48%;
+
+					&:first-child {
+						margin-right: 4%;
+					}
+				}
+			}
+			label {
+				display: block;
+				width: 100%;
+				margin-bottom: 15px;
+
+				input {
+					display: block;
+					width: 100%;
+					border-radius: 0;
+					border: 2px solid $text-color;
+					box-shadow: none;
+
+					margin: 2px 0 0;
+					padding: 5px 15px;
+					background-color: $white;
+					font-size: 1.2rem;
+					@include transition();
+
+					&:focus {
+						outline: none;
+						border-color: $second-color;
+					}
+					&.valid {
+						border-color: $light-green;
+					}
+				}
+			}
+			.button {
+				display: block;
+				width: 150px;
+				margin: 20px auto 0;
+			}
+
+		}
 	}
 
 	@include smallMedia() {

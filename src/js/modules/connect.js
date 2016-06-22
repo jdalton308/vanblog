@@ -13,16 +13,17 @@ function getIGphotos() {
 		url: ig_request_url,
 		dataType: 'json'
 	}).done(function(data){
-			console.log('Recieved IG data:');
-			console.log(data);
+			// console.log('Recieved IG data:');
+			// console.log(data);
 
-			// Posts = data.data array
 			data.data.forEach(function(post, i){
 				var $imgLink = $('<a href="' + post.link + '" target="_blank" class="ig-link"></a>')
-				var imgHTML = '<img src="' + post.images.standard_resolution.url + '"">';
+				var imgHTML = '<img src="' + post.images.standard_resolution.url + '">';
+				var locationHTML = '<h4 class="location">' + post.location.name + '</h4>';
+				var captionHTML = '<h4 class="caption">' + post.caption.text + '</h4>';
 
 				// Create HTML
-				$imgLink.html(imgHTML);
+				$imgLink.html(imgHTML + locationHTML + captionHTML);
 
 				// Add to page
 				$photoCont.append($imgLink);

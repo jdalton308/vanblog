@@ -86,10 +86,12 @@ button.button {
   text-decoration: none;
   border: none;
   border-radius: 0;
+  font-size: 1.0rem;
   font-weight: 700;
   -webkit-transition: all 0.5s ease;
   transition: all 0.5s ease;
-  box-shadow: 1px 2px 10px -2px #000; }
+  box-shadow: 1px 2px 10px -2px #000;
+  cursor: pointer; }
   a.button.blue-button,
   button.button.blue-button {
     background-color: #6bd6f1;
@@ -105,7 +107,9 @@ button.button {
     button.button.pink-button:hover {
       background-color: #ef1b1b; }
 
-section > h3, .content .side-nav nav section > .nav-item {
+section > h3, .content .side-nav nav section > .nav-item,
+h3.underline,
+.content .side-nav nav .underline.nav-item {
   margin-bottom: 20px;
   padding-bottom: 17px;
   border-bottom: 1px solid #6bd6f1; }
@@ -931,6 +935,56 @@ section > h3, .content .side-nav nav section > .nav-item {
     text-align: center; }
     .post.connect .connect-item h4 {
       margin: 0 0 5px; }
+  .post.connect .latest-ig-posts a.ig-link {
+    display: block;
+    width: 100%;
+    padding: 15px 15px 20px;
+    margin: 0 0 40px;
+    box-shadow: 2px 4px 15px -2px #666;
+    text-decoration: none; }
+    .post.connect .latest-ig-posts a.ig-link img {
+      display: block;
+      width: 100%;
+      margin-bottom: 10px; }
+    .post.connect .latest-ig-posts a.ig-link h4.caption {
+      margin: 0 0 10px; }
+    .post.connect .latest-ig-posts a.ig-link h4.location {
+      margin: 0;
+      text-align: right;
+      font-size: 0.9rem;
+      color: #6bd6f1; }
+  .post.connect form.validate .name-row {
+    width: 100%; }
+    .post.connect form.validate .name-row label {
+      display: inline-block;
+      width: 48%; }
+      .post.connect form.validate .name-row label:first-child {
+        margin-right: 4%; }
+  .post.connect form.validate label {
+    display: block;
+    width: 100%;
+    margin-bottom: 15px; }
+    .post.connect form.validate label input {
+      display: block;
+      width: 100%;
+      border-radius: 0;
+      border: 2px solid #13042b;
+      box-shadow: none;
+      margin: 2px 0 0;
+      padding: 5px 15px;
+      background-color: #FFF;
+      font-size: 1.2rem;
+      -webkit-transition: all 0.5s ease;
+      transition: all 0.5s ease; }
+      .post.connect form.validate label input:focus {
+        outline: none;
+        border-color: #6bd6f1; }
+      .post.connect form.validate label input.valid {
+        border-color: #8AF78A; }
+  .post.connect form.validate .button {
+    display: block;
+    width: 150px;
+    margin: 20px auto 0; }
   @media (min-width: 768px) {
     .post {
       margin-bottom: 40px; } }

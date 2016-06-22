@@ -32,8 +32,9 @@ XX- Basically style figures, lists, paragraphs, images, and headers
 Build Connect page
 XX- Email
 - Add email and IG icons
-- Email Signup styled
-- Pull-in instagram feed
+XX- Email Signup and images styled
+XX- Pull-in instagram feed
+- Move IG feed to posts
 
 XXBuild Node.js server
 XX- Routing
@@ -53,10 +54,13 @@ Favicon: Tiny van OR 'J+V'
 Make real posts:
 - Van:
 X	- Model choice
-	- Planning
-	- Carpentry
-	- Electrical
-	- Plumbing
+/	- Carpentry
+/	- Electrical
+/	- Plumbing
+/	- Organization
+/	- Total cost
+	- Construction overview
+	- Other build-out resources: -Websites -Forums -Videos
 	- 3 mo check-in: What would I do differently
 	- Parking
 - Travel
@@ -65,5 +69,6 @@ X	- Model choice
 	- Bend
 	- Leavenworth
 	- Seattle
+	- Portland
 - Climbing
 	- (Travel spots)
