@@ -44,6 +44,7 @@ XX- Hide landing screen if not at '/' or '/home'
 
 Add FB/Twitter sharing to each post
 Add FB/Twitter sharing to site
+Create a "no posts found" response
 Google Analytics
 Google AdSense
 - Ads in each article
@@ -54,7 +55,8 @@ Favicon: Tiny van OR 'J+V'
 Make real posts:
 - Van:
 X	- Model choice
-/	- Carpentry
+X	- Carpentry
+	- Sketch and photograph plans for bed and shelves
 /	- Electrical
 /	- Plumbing
 /	- Organization
