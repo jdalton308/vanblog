@@ -1047,6 +1047,7 @@ ol li {
       .post.connect form.validate label input.valid {
         border-color: #8AF78A; }
   .post.connect form.validate .form-messaging {
+    max-height: 0;
     overflow: hidden;
     text-align: center;
     -webkit-transition: all 0.5s ease;

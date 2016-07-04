@@ -7,9 +7,25 @@ var $ = require('jquery');
 var pathRef = require('../server/server-path-ref.js');
 var maps = require('./maps.js');
 var connect = require('./connect.js');
+var instagram = require('./instagram-feed.js');
 
 
 var $pageContainer = $('main');
+
+// Check for unique pages
+function checkPath(path) {
+	switch (path) {
+		case '/route':
+			maps();
+			break;
+		case '/connect': 
+			connect();
+			break;
+		case '/instagram':
+			instagram();
+			break;
+	}
+}
 
 
 function getPage(path) {
@@ -32,11 +48,8 @@ function getPage(path) {
 			// Re-run link-binding
 			init();
 
-			if (path === '/route') {
-				maps();
-			} else if (path === '/connect') {
-				connect();
-			}
+			// Check to init unique pages
+			checkPath(path);
 
 			// Wait 1 second, then remove old page and reset for next load
 			window.setTimeout(function(){
@@ -69,11 +82,8 @@ function checkInitialLoad() {
 		$('body').addClass('scroll');
 	}
 
-	if (currentPath === '/route') {
-		maps();
-	} else if (currentPath === '/connect') {
-		connect();
-	}
+	// Check to init unique pages
+	checkPath(currentPath);
 }
 
 function init() {

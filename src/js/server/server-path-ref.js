@@ -11,6 +11,7 @@ var pathRef = {
 	'/connect': '/pages/connect.html',
 	'/route': '/pages/route.html',
 	'/404': '/pages/404.html',
+	'/instagram': '/pages/instagram-feed.html',
 
 	// Categories
 	'/blog': '/cat/All',

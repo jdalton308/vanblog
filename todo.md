@@ -34,9 +34,9 @@ XX- Email
 XX- Add email and IG icons
 XX- Email Signup and images styled
 XX- Pull-in instagram feed
-- Form submittal
-- Form validation
-- Move IG feed to posts
+XX- Form submittal
+XX- Form validation
+XX- Move IG feed to posts
 
 XXBuild Node.js server
 XX- Routing
@@ -50,6 +50,7 @@ Create a "no posts found" response
 Google Analytics
 Google AdSense
 - Ads in each article
+Amazon Affiliate?
 404 page
 
 Favicon: Tiny van OR 'J+V'
@@ -67,6 +68,7 @@ X	- Carpentry
 	- Other build-out resources: -Websites -Forums -Videos
 	- 3 mo check-in: What would I do differently
 	- Parking
+	- Eating
 - Travel
 	- Tahoe
 	- Mammoth and Bishop

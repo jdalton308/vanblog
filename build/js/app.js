@@ -9844,52 +9844,10 @@ Landing();
 Nav();
 
 Router();
-},{"./modules/connect.js":3,"./modules/landing.js":4,"./modules/nav.js":6,"./modules/router.js":7}],3:[function(require,module,exports){
+},{"./modules/connect.js":3,"./modules/landing.js":5,"./modules/nav.js":7,"./modules/router.js":8}],3:[function(require,module,exports){
 'use strict';
 
 var $ = require('jquery');
-var ig_request_url = '/instagram';
-
-
-function getIGphotos() {
-	var $photoCont = $('.ig-post-list');
-
-	// $.get(ig_request_url)
-	$.ajax({
-		type: 'GET',
-		url: ig_request_url,
-		dataType: 'json'
-	}).done(function(data){
-			// console.log('Recieved IG data:');
-			// console.log(data);
-
-			// Remove placeholder photos
-			$photoCont.empty();
-
-			data.data.forEach(function(post, i){
-
-				// Get lower resolution image for mobile views
-				var imgUrl = (window.innerWidth < 768) ? post.images.low_resolution.url : post.images.standard_resolution.url
-
-				var $imgLink = $('<a href="' + post.link + '" target="_blank" class="ig-link"></a>')
-				var imgHTML = '<img src="' + imgUrl + '">';
-				var locationHTML = '<h4 class="location">' + post.location.name + '</h4>';
-				var captionHTML = '<h4 class="caption">' + post.caption.text + '</h4>';
-
-				// Create HTML
-				$imgLink.html(imgHTML + captionHTML + locationHTML);
-
-				// Add to page
-				$photoCont.append($imgLink);
-
-				// console.log('Added '+ post.location.name + ' to page');
-			});
-		})
-		.fail(function(err){
-			console.log('Error getting IG data:');
-			console.log(err);
-		});
-}
 
 
 function watchForm() {
@@ -9968,12 +9926,59 @@ function watchForm() {
 
 }
 function init() {
-	getIGphotos();
 	watchForm();
 }
 
 module.exports = init;
 },{"jquery":1}],4:[function(require,module,exports){
+'use strict';
+
+var $ = require('jquery');
+var ig_request_url = '/instagram';
+
+
+function getIGphotos() {
+	var $photoCont = $('.ig-post-list');
+
+	// $.get(ig_request_url)
+	$.ajax({
+		type: 'GET',
+		url: ig_request_url,
+		dataType: 'json'
+	}).done(function(data){
+			// console.log('Recieved IG data:');
+			// console.log(data);
+
+			// Remove placeholder photos
+			$photoCont.empty();
+
+			data.data.forEach(function(post, i){
+
+				// Get lower resolution image for mobile views
+				var imgUrl = (window.innerWidth < 768) ? post.images.low_resolution.url : post.images.standard_resolution.url
+
+				var $imgLink = $('<a href="' + post.link + '" target="_blank" class="ig-link"></a>')
+				var imgHTML = '<img src="' + imgUrl + '">';
+				var locationHTML = '<h4 class="location">' + post.location.name + '</h4>';
+				var captionHTML = '<h4 class="caption">' + post.caption.text + '</h4>';
+
+				// Create HTML
+				$imgLink.html(imgHTML + captionHTML + locationHTML);
+
+				// Add to page
+				$photoCont.append($imgLink);
+
+				// console.log('Added '+ post.location.name + ' to page');
+			});
+		})
+		.fail(function(err){
+			console.log('Error getting IG data:');
+			console.log(err);
+		});
+}
+
+module.exports = getIGphotos;
+},{"jquery":1}],5:[function(require,module,exports){
 
 var $ = require('jquery');
 
@@ -10012,7 +10017,7 @@ function init() {
 
 
 module.exports = init;
-},{"jquery":1}],5:[function(require,module,exports){
+},{"jquery":1}],6:[function(require,module,exports){
 // API Key: AIzaSyBsK3m9FE0rOvlwJLID6d4s7Hd_teIr8v0
 
 var $ = require('jquery');
@@ -10233,7 +10238,7 @@ function init() {
 
 
 module.exports = init;
-},{"jquery":1}],6:[function(require,module,exports){
+},{"jquery":1}],7:[function(require,module,exports){
 
 var $ = require('jquery');
 
@@ -10268,7 +10273,7 @@ function init() {
 
 
 module.exports = init;
-},{"jquery":1}],7:[function(require,module,exports){
+},{"jquery":1}],8:[function(require,module,exports){
 
 // Router
 // ------------------------
@@ -10278,9 +10283,25 @@ var $ = require('jquery');
 var pathRef = require('../server/server-path-ref.js');
 var maps = require('./maps.js');
 var connect = require('./connect.js');
+var instagram = require('./instagram-feed.js');
 
 
 var $pageContainer = $('main');
+
+// Check for unique pages
+function checkPath(path) {
+	switch (path) {
+		case '/route':
+			maps();
+			break;
+		case '/connect': 
+			connect();
+			break;
+		case '/instagram':
+			instagram();
+			break;
+	}
+}
 
 
 function getPage(path) {
@@ -10303,11 +10324,8 @@ function getPage(path) {
 			// Re-run link-binding
 			init();
 
-			if (path === '/route') {
-				maps();
-			} else if (path === '/connect') {
-				connect();
-			}
+			// Check to init unique pages
+			checkPath(path);
 
 			// Wait 1 second, then remove old page and reset for next load
 			window.setTimeout(function(){
@@ -10340,11 +10358,8 @@ function checkInitialLoad() {
 		$('body').addClass('scroll');
 	}
 
-	if (currentPath === '/route') {
-		maps();
-	} else if (currentPath === '/connect') {
-		connect();
-	}
+	// Check to init unique pages
+	checkPath(currentPath);
 }
 
 function init() {
@@ -10371,7 +10386,7 @@ function init() {
 }
 
 module.exports = init;
-},{"../server/server-path-ref.js":8,"./connect.js":3,"./maps.js":5,"jquery":1}],8:[function(require,module,exports){
+},{"../server/server-path-ref.js":9,"./connect.js":3,"./instagram-feed.js":4,"./maps.js":6,"jquery":1}],9:[function(require,module,exports){
 'use strict';
 
 var pathRef = {
@@ -10385,6 +10400,7 @@ var pathRef = {
 	'/connect': '/pages/connect.html',
 	'/route': '/pages/route.html',
 	'/404': '/pages/404.html',
+	'/instagram': '/pages/instagram-feed.html',
 
 	// Categories
 	'/blog': '/cat/All',
