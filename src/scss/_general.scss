@@ -108,12 +108,21 @@ button {
     box-shadow: 1px 2px 10px -2px $black;
     cursor: pointer;
 
+    &:disabled {
+      opacity: 0.5;
+      box-shadow: none;
+    }
+
     &.blue-button {
       background-color: $second-color;
       color: $white;
 
       &:hover {
         background-color: darken($second-color, 10%);
+      }
+
+      &:disabled:hover {
+        background-color: $second-color;
       }
     }
     &.pink-button {
@@ -122,6 +131,10 @@ button {
       
       &:hover {
         background-color: darken($base-color, 10%);
+      }
+
+      &:disabled:hover {
+        background-color: $base-color;
       }
     }
   }

@@ -92,6 +92,10 @@ button.button {
   transition: all 0.5s ease;
   box-shadow: 1px 2px 10px -2px #000;
   cursor: pointer; }
+  a.button:disabled,
+  button.button:disabled {
+    opacity: 0.5;
+    box-shadow: none; }
   a.button.blue-button,
   button.button.blue-button {
     background-color: #6bd6f1;
@@ -99,6 +103,9 @@ button.button {
     a.button.blue-button:hover,
     button.button.blue-button:hover {
       background-color: #3cc9ed; }
+    a.button.blue-button:disabled:hover,
+    button.button.blue-button:disabled:hover {
+      background-color: #6bd6f1; }
   a.button.pink-button,
   button.button.pink-button {
     background-color: #f24b4b;
@@ -106,6 +113,9 @@ button.button {
     a.button.pink-button:hover,
     button.button.pink-button:hover {
       background-color: #ef1b1b; }
+    a.button.pink-button:disabled:hover,
+    button.button.pink-button:disabled:hover {
+      background-color: #f24b4b; }
 
 section > h3, .content .side-nav nav section > .nav-item,
 h3.underline,
@@ -958,11 +968,31 @@ ol li {
   @media (min-width: 768px) {
     .post.map #map-canvas {
       height: 500px; } }
+  .post.connect .icon-cont {
+    text-align: center;
+    padding: 40px 0 10px; }
   .post.connect .connect-item {
-    margin: 0 0 40px;
+    display: inline-block;
+    min-width: 40%;
+    margin: 0 100px 20px 0;
+    padding: 10px 20px;
     text-align: center; }
+    .post.connect .connect-item:nth-child(even) {
+      margin-right: 0; }
+    .post.connect .connect-item .icon {
+      display: block;
+      width: 50px;
+      height: auto;
+      margin: 0 auto 10px; }
     .post.connect .connect-item h4 {
       margin: 0 0 5px; }
+    @media (min-width: 768px) {
+      .post.connect .connect-item {
+        -webkit-transition: all 0.5s ease;
+        transition: all 0.5s ease;
+        box-shadow: 2px 3px 10px -1px transparent; }
+        .post.connect .connect-item:hover {
+          box-shadow: 2px 3px 10px -1px #666; } }
   .post.connect .latest-ig-posts a.ig-link {
     display: block;
     width: 100%;
@@ -975,12 +1005,19 @@ ol li {
       width: 100%;
       margin-bottom: 10px; }
     .post.connect .latest-ig-posts a.ig-link h4.caption {
-      margin: 0 0 10px; }
+      margin: 0 0 10px;
+      line-height: 1.2em; }
     .post.connect .latest-ig-posts a.ig-link h4.location {
       margin: 0;
       text-align: right;
       font-size: 0.9rem;
       color: #6bd6f1; }
+    @media (min-width: 768px) {
+      .post.connect .latest-ig-posts a.ig-link {
+        -webkit-transition: all 0.7s ease;
+        transition: all 0.7s ease; }
+        .post.connect .latest-ig-posts a.ig-link:hover {
+          background-color: #fee; } }
   .post.connect form.validate .name-row {
     width: 100%; }
     .post.connect form.validate .name-row label {
@@ -1009,6 +1046,16 @@ ol li {
         border-color: #6bd6f1; }
       .post.connect form.validate label input.valid {
         border-color: #8AF78A; }
+  .post.connect form.validate .form-messaging {
+    overflow: hidden;
+    text-align: center;
+    -webkit-transition: all 0.5s ease;
+    transition: all 0.5s ease; }
+    .post.connect form.validate .form-messaging h4 {
+      margin: 0;
+      padding: 15px 0; }
+    .post.connect form.validate .form-messaging.show {
+      max-height: 150px; }
   .post.connect form.validate .button {
     display: block;
     width: 150px;

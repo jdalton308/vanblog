@@ -34,12 +34,9 @@ gulp.task('styles', function() {
 });
 
 gulp.task('scripts', function(){
-	// gulp.src(jsFiles)
 	browserify('./src/js/app.js').bundle()
-		// .pipe(concat('app.js'))
-		// .pipe(uglify())
 		.pipe(source('app.js'))
-		.pipe(streamify(uglify()))
+		// .pipe(streamify(uglify()))
 		.pipe(gulp.dest('./build/js/'))
 		.on('error', gutil.log);
 });

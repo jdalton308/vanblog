@@ -31,9 +31,11 @@ XX- Basically style figures, lists, paragraphs, images, and headers
 
 Build Connect page
 XX- Email
-- Add email and IG icons
+XX- Add email and IG icons
 XX- Email Signup and images styled
 XX- Pull-in instagram feed
+- Form submittal
+- Form validation
 - Move IG feed to posts
 
 XXBuild Node.js server

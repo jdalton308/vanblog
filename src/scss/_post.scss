@@ -119,13 +119,38 @@
 	}
 
 	&.connect {
-
+		.icon-cont {
+			text-align: center;
+			padding: 40px 0 10px;
+		}
 		.connect-item {
-			margin: 0 0 40px;
+			display: inline-block;
+			min-width: 40%;
+			margin: 0 100px 20px 0;
+			padding: 10px 20px;
 			text-align: center;
 
+			&:nth-child(even) {
+				margin-right: 0;
+			}
+
+			.icon {
+				display: block;
+				width: 50px;
+				height: auto;
+				margin: 0 auto 10px;
+			}
 			h4 {
 				margin: 0 0 5px;
+			}
+
+			@media (min-width: $mobile) {
+				@include transition();
+				box-shadow: 2px 3px 10px -1px transparent; 
+
+				&:hover {
+					box-shadow: 2px 3px 10px -1px $grey; 
+				}
 			}
 		}
 		.latest-ig-posts {
@@ -145,6 +170,7 @@
 				h4 {
 					&.caption {
 						margin: 0 0 10px;
+						line-height: 1.2em
 					}
 					&.location {
 						margin: 0;
@@ -152,6 +178,14 @@
 						text-align: right;
 						font-size: 0.9rem;
 						color: $second-color;
+					}
+				}
+
+				@media (min-width: $mobile) {
+					@include transition(0.7s);
+
+					&:hover {
+						background-color: #fee;
 					}
 				}
 			}
@@ -194,6 +228,21 @@
 					&.valid {
 						border-color: $light-green;
 					}
+				}
+			}
+			.form-messaging {
+				// max-height: 0;
+				overflow: hidden;
+				text-align: center;
+				@include transition();
+				
+				h4 {
+					margin: 0;
+					padding: 15px 0;
+				}
+
+				&.show {
+					max-height: 150px;
 				}
 			}
 			.button {

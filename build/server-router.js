@@ -24,6 +24,10 @@ function isStaticFile(path) {
 	let dotRegEx = /[a-z0-9]\.[a-z]/i;
 	return dotRegEx.test(path);
 }
+function isSvgFile(path) {
+	let svgRegEx = /\.svg/i;
+	return svgRegEx.test(path);
+}
 function isCatRequest(path) {
 	let catRegEx = /\/cat\//i;
 	return catRegEx.test(path);
@@ -45,6 +49,9 @@ function requestStaticFile(path, res) {
 			return;
 		}
 
+		if (isSvgFile(path)) {
+			res.setHeader('Content-Type', 'image/svg+xml');
+		}
 		res.writeHead(200);
 		res.write(data);
 		res.end();

@@ -4,8 +4,8 @@
 // - Watches for URL hash changes, then loads pages through AJAX
 
 var $ = require('jquery');
-var maps = require('./maps.js');
 var pathRef = require('../server/server-path-ref.js');
+var maps = require('./maps.js');
 var connect = require('./connect.js');
 
 
@@ -32,7 +32,7 @@ function getPage(path) {
 			// Re-run link-binding
 			init();
 
-			if (path == '/route') {
+			if (path === '/route') {
 				maps();
 			} else if (path === '/connect') {
 				connect();
@@ -67,7 +67,9 @@ function checkInitialLoad() {
 	if (currentPath !== '/' && currentPath !== '/home') {
 		// If home, then move page down
 		$('body').addClass('scroll');
-	} else if (currentPath === '/route') {
+	}
+
+	if (currentPath === '/route') {
 		maps();
 	} else if (currentPath === '/connect') {
 		connect();
@@ -90,7 +92,6 @@ function init() {
 
 	$window.off('popstate');
 	$window.on('popstate', function(e){
-
 		var location = window.location.pathname;
 		loadTarget(location);
 	});
