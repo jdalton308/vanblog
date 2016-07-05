@@ -133,10 +133,10 @@ ol li {
     display: inline-block;
     position: absolute;
     z-index: -1;
-    top: -3px;
+    top: -2px;
     left: -32px;
-    width: 30px;
-    height: 30px;
+    width: 32px;
+    height: 32px;
     background-color: #f24b4b;
     border-radius: 50%;
     box-shadow: 1px 2px 10px -2px #13042b; }
@@ -150,7 +150,7 @@ ol li {
   ol li h4 {
     color: #13042b; }
   ol li > h4 {
-    padding-left: 5px; }
+    padding-left: 8px; }
 
 .main-wrapper {
   max-width: 840px;
@@ -232,6 +232,25 @@ ol li {
       margin-left: 5px; }
     .content .side-nav nav .nav-item .sub-nav .nav-item {
       color: #f24b4b; }
+  .content .side-nav .bottom-nav {
+    position: absolute;
+    right: 50%;
+    -ms-transform: translateX(50%);
+    -webkit-transform: translateX(50%);
+    transform: translateX(50%);
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    font-size: 0.8rem;
+    color: #FFF; }
+    .content .side-nav .bottom-nav a,
+    .content .side-nav .bottom-nav p {
+      display: inline-block;
+      padding: 0 10px; }
+    .content .side-nav .bottom-nav a {
+      color: #FFF; }
+      .content .side-nav .bottom-nav a:hover {
+        text-decoration: none; }
 
 @media (min-width: 768px) {
   .content .side-nav {
@@ -1061,6 +1080,8 @@ ol li {
     display: block;
     width: 150px;
     margin: 20px auto 0; }
+  .post.privacy h3, .post.privacy .content .side-nav nav .nav-item, .content .side-nav nav .post.privacy .nav-item {
+    margin-top: 30px; }
   @media (min-width: 768px) {
     .post {
       margin-bottom: 40px; } }

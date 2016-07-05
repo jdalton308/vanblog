@@ -5,7 +5,7 @@
 
 let posts = [
 	{
-		'name': 'Van Build: Van Selection',
+		'name': 'Van Build: Selection',
 		'date': '6.1.2016',
 		'categories': ['Van'],
 		// 'thumbnail': '/path/to/thumbnail'(?),
@@ -13,15 +13,39 @@ let posts = [
 		'description': 'Some of the van models I considered when shopping, and the important features I took into account.'
 	},
 	{
-		'name': 'Van Build: Van Woodwork',
+		'name': 'Van Build: Flooring',
 		'date': '6.3.2016',
 		'categories': ['Van'],
 		// 'thumbnail': '/path/to/thumbnail'(?),
-		'link': '/blog/van-carpentry',
-		'description': 'The main construction that went into the van, including insulation, paneling on walls and ceiling, flooring, the bed frame, and custom shelving.'
+		'link': '/blog/van-flooring',
+		'description': 'Assembling the laminate flooring, with the underlayment and subfloor.'
 	},
 	{
-		'name': 'Van Build: Other Resources',
+		'name': 'Van Build: Insulation',
+		'date': '6.4.2016',
+		'categories': ['Van'],
+		// 'thumbnail': '/path/to/thumbnail'(?),
+		'link': '/blog/van-insulation',
+		'description': 'The simple insulation I used around the walls and ceiling.'
+	},
+	{
+		'name': 'Van Build: Walls and Ceiling',
+		'date': '6.5.2016',
+		'categories': ['Van'],
+		// 'thumbnail': '/path/to/thumbnail'(?),
+		'link': '/blog/van-walls',
+		'description': 'How we put up the wood paneling around the walls and ceiling of the van.'
+	},
+	{
+		'name': 'Van Build: Carpentry',
+		'date': '6.6.2016',
+		'categories': ['Van'],
+		// 'thumbnail': '/path/to/thumbnail'(?),
+		'link': '/blog/van-carpentry',
+		'description': 'The woodwork within the van: The bed frame, shelves, and sink counter.'
+	},
+	{
+		'name': 'Van Build: Online Resources',
 		'date': '6.13.2016',
 		'categories': ['Van'],
 		// 'thumbnail': '/path/to/thumbnail'(?),

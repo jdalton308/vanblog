@@ -40,17 +40,31 @@ XX- Move IG feed to posts
 
 XXBuild Node.js server
 XX- Routing
-XX - See Google Doc for planning
+XX- See Google Doc for planning
+XX- Create a "no posts found" response
 
 XX- Hide landing screen if not at '/' or '/home'
 
 Add FB/Twitter sharing to each post
-Add FB/Twitter sharing to site
-Create a "no posts found" response
-Google Analytics
+XX Add FB/Twitter sharing to site
+XX Google Analytics
+
 Google AdSense
 - Ads in each article
-Amazon Affiliate?
+
+Amazon Affiliate
+- Add payment & tax info
+- Add to pages
+
+Home Depot Affiliate
+
+Privacy Policy
+- Mush disclose all 3rd party technologies, including HD affilate (CG), the use of cookies, and how to disable the use of cookies
+- Cookies for Home Depot Affiliate
+
+Terms of Use
+- Legal bit about lack of liability
+
 404 page
 
 Favicon: Tiny van OR 'J+V'
@@ -78,3 +92,11 @@ X	- Carpentry
 	- Portland
 - Climbing
 	- (Travel spots)
+
+
+
+Deployment Checklist
+- Sharing data on FB and Twitter
+- Instagram posts
+- Google Analytics/Tag Manager working
+- Ensure blog summary dates match those on actual post

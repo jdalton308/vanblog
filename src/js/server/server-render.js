@@ -29,6 +29,7 @@ function renderCat(path){
 
 	// Create HTML from template and postRef
 	let pageHTML = '<h1>'+ category + ' Posts</h1>';
+	let postsHTML = ''; // Doing this to check later if no posts were found
 
 	// - Loop through posts, and create HTML
 	for (let i = 0; i < postRef.length; i++) {
@@ -36,17 +37,25 @@ function renderCat(path){
 		let post = postRef[i];
 		let postCategories = post.categories;
 
+		// Check category of post, unless getting "All" or "Latest"
 		if (postCategories.indexOf(category) != -1 || category === 'All' || category === 'Latest') {
 
 			let postHTML = createPostHTML(post, templateHTML);
-			
-			pageHTML += postHTML;
+			postsHTML += postHTML;
 		}
 
+		// On "Latest" category, only show 6 posts
 		if (i === 6 && category === 'Latest') {
 			break;
 		}
 	}
+
+	// If no posts found, show a message...
+	if ( postsHTML === '' ) {
+		postsHTML = '<h4>No posts here yet. Check back soon.</h4>';
+	}
+
+	pageHTML += postsHTML;
 
 	// Return HTML block
 	return pageHTML;
