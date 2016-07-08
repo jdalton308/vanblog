@@ -107,8 +107,6 @@ function requestHome(path, res) {
 function route(req, res) {
 	let requestPath = req.url;
 
-	console.log('Request for '+ req.url);
-
 	// Standard static file request
 	if (isStaticFile(requestPath)) {
 		console.log('Request for static file');
