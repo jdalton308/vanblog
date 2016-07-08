@@ -162,6 +162,7 @@ $wheelSize: 12px;
 .landing {
 	width: 100%;
 	height: auto;
+	padding-top: 5vh;
 
 	&:after {
 		content: '';
@@ -169,10 +170,14 @@ $wheelSize: 12px;
 		clear: both;
 	}
 
-	.landing-image {
+	.landing-image,
+	.landing-title {
 		position: relative;
+	}
+
+	.landing-image {
+		height: 55vh;
 		background-color: $second-color;
-		height: 100vw;
 		box-shadow: $box-shadow-inset;
 		overflow: hidden;
 
@@ -185,8 +190,7 @@ $wheelSize: 12px;
 			height: 10%;
 			border-radius: 50%;
 			background-color: $lighter-grey;
-			opacity: 0.6;
-			box-shadow: 0 0 10px 5px $lighter-grey;
+			box-shadow: 2px 4px 15px -2px $grey;
 
 			&.one {
 				left: 14%;
@@ -225,7 +229,7 @@ $wheelSize: 12px;
 			width: 39%;
 			height: 58%;
 			background-color: $light-red;
-			box-shadow: -3px 0 20px -8px $grey;
+			box-shadow: -3px 0 20px -4px $black;
 
 			@include transform( rotate(45deg) );
 
@@ -275,6 +279,7 @@ $wheelSize: 12px;
 			background-color: $orange;
 			border-radius: 50%;
 			box-shadow: 0 0 20px 5px $orange;
+			// box-shadow: 0 2px 15px -1px $grey;
 		}
 		.ground {
 			position: absolute;
@@ -418,13 +423,18 @@ $wheelSize: 12px;
 
 	}
 	.landing-title {
-		// position: absolute;
-		// @include centerY();
-		// left: 0;
-		padding: 40px 20px 45px;
+		position: relative;
+		height: 40vh;
 		background-color: $base-color;
-		// box-shadow: $box-shadow;
 		text-align: center;
+
+
+		.title-box {
+			@include centerMe();
+			width: 100%;
+			padding: 0 20px;
+			text-align: center;
+		}
 
 		h1,
 		h3,
@@ -449,6 +459,7 @@ $wheelSize: 12px;
 	}
 	@include smallMedia() {
 		height: 100vh;
+		padding-top: 0;
 
 		.landing-image,
 		.landing-title {
@@ -462,10 +473,10 @@ $wheelSize: 12px;
 			overflow: hidden;
 		}
 		.landing-title {
-			position: relative;
-			left: 0;
-			top: 0;
-			@include transform(none);
+			// position: relative;
+			// left: 0;
+			// top: 0;
+			// @include transform(none);
 
 			h1 {
 				font-size: 5.2rem;
@@ -474,11 +485,11 @@ $wheelSize: 12px;
 			h3 {
 				color: $white;
 			}
-			.title-box {
-				@include centerMe();
-				width: 90%;
-				text-align: center;
-			}
+			// .title-box {
+			// 	@include centerMe();
+			// 	width: 90%;
+			// 	text-align: center;
+			// }
 			.down-button {
 				display: inline-block;
 				padding: 10px;

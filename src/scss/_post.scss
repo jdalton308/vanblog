@@ -167,43 +167,6 @@
 				}
 			}
 		}
-		.latest-ig-posts {
-			a.ig-link {
-				display: block;
-				width: 100%;
-				padding: 15px 15px 20px;
-				margin: 0 0 40px;
-				box-shadow: 2px 4px 15px -2px $grey;
-				text-decoration: none;
-
-				img {
-					display: block;
-					width: 100%;
-					margin-bottom: 10px;
-				}
-				h4 {
-					&.caption {
-						margin: 0 0 10px;
-						line-height: 1.2em
-					}
-					&.location {
-						margin: 0;
-						// padding: 10px 0 0;
-						text-align: right;
-						font-size: 0.9rem;
-						color: $second-color;
-					}
-				}
-
-				@media (min-width: $mobile) {
-					@include transition(0.7s);
-
-					&:hover {
-						background-color: #fee;
-					}
-				}
-			}
-		}
 		form.validate {
 			.name-row {
 				width: 100%;
@@ -295,5 +258,43 @@ a.post {
 			@include transform( scale(1.01) );
 			box-shadow: 4px 2px 20px -4px $text-color;
 		}		
+	}
+}
+.latest-ig-posts {
+	a.ig-link {
+		display: block;
+		width: 100%;
+		padding: 15px 15px 20px;
+		margin: 0 0 40px;
+		box-shadow: 2px 4px 15px -2px $grey;
+		text-decoration: none;
+		background-color: $white;
+
+		img {
+			display: block;
+			width: 100%;
+			margin-bottom: 10px;
+		}
+		h4 {
+			&.caption {
+				margin: 0 0 10px;
+				line-height: 1.2em
+			}
+			&.location {
+				margin: 0;
+				// padding: 10px 0 0;
+				text-align: right;
+				font-size: 0.9rem;
+				color: $second-color;
+			}
+		}
+
+		@media (min-width: $mobile) {
+			@include transition(0.7s);
+
+			&:hover {
+				background-color: #fee;
+			}
+		}
 	}
 }

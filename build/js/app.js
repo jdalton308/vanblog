@@ -9934,7 +9934,7 @@ module.exports = init;
 'use strict';
 
 var $ = require('jquery');
-var ig_request_url = '/instagram';
+var ig_request_url = '/instagram-data';
 
 
 function getIGphotos() {
@@ -9946,7 +9946,7 @@ function getIGphotos() {
 		url: ig_request_url,
 		dataType: 'json'
 	}).done(function(data){
-			// console.log('Recieved IG data:');
+			console.log('Recieved IG data:');
 			// console.log(data);
 
 			// Remove placeholder photos
