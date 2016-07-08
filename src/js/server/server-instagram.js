@@ -16,7 +16,7 @@ instagramAPI = new instagramAPI(access_token);
 function getPhotoData(res1) {
 	instagramAPI.userSelfMedia().then(
 		(data) => {
-			console.log('Recieved IG data...');
+			// console.log('Recieved IG data...');
 			res1.writeHead(200, {'Content-Type': 'application/json'});
 			// console.log(data);
 			// let stringData = data.toString('utf8');

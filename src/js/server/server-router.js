@@ -107,27 +107,25 @@ function requestHome(path, res) {
 function route(req, res) {
 	let requestPath = req.url;
 
-	console.log('Request for '+ req.url);
-
 	// Standard static file request
 	if (isStaticFile(requestPath)) {
-		console.log('Request for static file');
+		// console.log('Request for static file');
 		return requestStaticFile('.'+ requestPath, res);
 
 	// Request for generated category page
 	} else if (isCatRequest(requestPath)){
 		// Render the category HTML
-		console.log('Category page request');
+		// console.log('Category page request');
 		return requestCatSummary(requestPath, res);
 
 	// Request for Instagram photos
 	} else if (isIGRequest(requestPath)){
-		console.log('Request for IG photos');
+		// console.log('Request for IG photos');
 		return instagram(res);
 
 	// Home request
 	} else {
-		console.log('Request for home variant');
+		// console.log('Request for home variant');
 		return requestHome(requestPath, res);
 	}
 }
