@@ -1,7 +1,6 @@
 
 var $ = require('jquery');
 
-
 var $body = $('body');
 var $landing = $('.landing');
 var $landingImg = $landing.find('.landing-image');
