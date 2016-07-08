@@ -2,28 +2,31 @@
 .content {
 	.mobile-nav-btn {
 		position: fixed;
+		z-index: 10;
 		top: 0;
 		left: 0;
 		width: 100%;
-		padding: 3px 0 0;
+		padding: 10px 0;
 		background-color: $base-color;
 		text-align: center;
 		text-shadow: $text-shadow;
+		box-shadow: $box-shadow;
 
 		h1 {
 			margin: 0;
-
-			@media (max-width: $mobile-small) {
-				font-size: 2.3rem;
-			}
+			font-size: 1.8rem;
+			border-bottom: none;
 		}
 	}
 	
 	.side-nav {
 		position: fixed;
+		z-index: 10;
 		top: -100%;
 		width: 100%;
-		padding: 10px 0 20px;
+		max-height: 100%;
+		overflow-y: auto;
+		padding: 10px 0 35px;
 		background-color: $base-color;
 		@include transition();
 		text-align: center;
@@ -36,8 +39,10 @@
 		}
 		.mobile-up-button,
 		.up-button {
-			padding: 10px;
+			padding: 0;
+			margin-bottom: 15px;
 			font-size: 2rem;
+			line-height: 0.9em;
 		}
 		h1 {
 			padding: 0 15px 5px;
@@ -60,16 +65,24 @@
 				}
 
 				.sub-nav {
+					background-color: $white;
+
 					.nav-item {
 						color: $base-color;
+					}
+				}
+				&.nav-parent {
+					padding-bottom: 5px;
+
+					.icon-arrow {
+						display: inline-block;
+						margin-bottom: 5px;
 					}
 				}
 			}
 		}
 		.bottom-nav {
-			@include centerX();
-			bottom: 0;
-			width: 100%;
+			padding: 30px 8px 0px;
 			text-align: center;
 			font-size: 0.8rem;
 			color: $white;
@@ -105,6 +118,7 @@
 				display: inline-block;
 				@include centerX();
 				top: 20px;
+				padding: 20px;
 				cursor: pointer;
 			}
 			.mobile-up-button {
@@ -148,6 +162,14 @@
 							}
 						}
 					}
+					&.nav-parent {
+						padding-bottom: 14px;
+
+						.icon-arrow {
+							display: inline;
+							margin: 0;
+						}
+					}
 					&.open {
 						background-color: $white;
 						color: $base-color;
@@ -164,6 +186,13 @@
 						}
 					}
 				}
+			}
+
+			.bottom-nav {
+				@include centerX();
+				bottom: 0;
+				width: 100%;
+				padding: 0;
 			}
 		}
 	} // end media

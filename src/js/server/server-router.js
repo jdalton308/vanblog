@@ -33,7 +33,7 @@ function isCatRequest(path) {
 	return catRegEx.test(path);
 }
 function isIGRequest(path) {
-	let catRegEx = /\/instagram/i;
+	let catRegEx = /\/instagram-data/i;
 	return catRegEx.test(path);
 }
 
