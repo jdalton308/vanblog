@@ -58,14 +58,14 @@ Amazon Affiliate
 
 Home Depot Affiliate
 
-Privacy Policy
-- Mush disclose all 3rd party technologies, including HD affilate (CG), the use of cookies, and how to disable the use of cookies
-- Cookies for Home Depot Affiliate
+XXPrivacy Policy
+XX- Mush disclose all 3rd party technologies, including HD affilate (CG), the use of cookies, and how to disable the use of cookies
+XX- Cookies for Home Depot Affiliate
 
-Terms of Use
-- Legal bit about lack of liability
+XXTerms of Use
+XX- Legal bit about lack of liability
 
-404 page
+XX404 page
 
 Favicon: Tiny van OR 'J+V'
 
@@ -73,7 +73,7 @@ Make real posts:
 - Van:
 X	- Model choice
 X	- Carpentry
-	- Sketch and photograph plans for bed and shelves
+X	- Sketch and photograph plans for bed and shelves
 /	- Electrical
 /	- Plumbing
 /	- Organization
@@ -100,3 +100,5 @@ Deployment Checklist
 - Instagram posts
 - Google Analytics/Tag Manager working
 - Ensure blog summary dates match those on actual post
+- Affiliate links are working
+- Mobile appearance

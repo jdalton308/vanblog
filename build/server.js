@@ -13,6 +13,3 @@ const server = http.createServer((req,res) => {
 });
 
 server.listen(3000, 'localhost');
-
-console.log('Server started on localhost:3000');
-// console.log('Current directory: '+ __dirname);

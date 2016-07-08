@@ -98,6 +98,20 @@
 			&:last-child {
 				margin-bottom: 0;
 			}
+
+			a {
+				color: $white;
+				text-decoration: none;
+				text-shadow: 1px 1px 4px $grey;
+			}
+
+			@media (min-width: $mobile) {
+				a {
+					&:hover {
+						color: $text-color;
+					}
+				}
+			}
 		}
 	}
 

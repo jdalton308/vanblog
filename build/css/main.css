@@ -117,6 +117,17 @@ button.button {
     button.button.pink-button:disabled:hover {
       background-color: #f24b4b; }
 
+.adbox {
+  width: 100%;
+  margin: 60px 0;
+  text-align: center; }
+  .adbox h4 {
+    text-align: center;
+    margin: 0 0 10px;
+    color: #666; }
+  .adbox iframe {
+    box-shadow: 4px 2px 20px -5px #13042b; }
+
 section > h3, .content .side-nav nav section > .nav-item,
 h3.underline,
 .content .side-nav nav .underline.nav-item {
@@ -248,9 +259,12 @@ ol li {
       display: inline-block;
       padding: 0 10px; }
     .content .side-nav .bottom-nav a {
-      color: #FFF; }
+      color: #FFF;
+      text-decoration: none;
+      -webkit-transition: all 0.5s ease;
+      transition: all 0.5s ease; }
       .content .side-nav .bottom-nav a:hover {
-        text-decoration: none; }
+        text-decoration: underline; }
 
 @media (min-width: 768px) {
   .content .side-nav {
@@ -978,6 +992,13 @@ ol li {
       margin-bottom: 10px; }
       .post ul.styled li:last-child {
         margin-bottom: 0; }
+      .post ul.styled li a {
+        color: #FFF;
+        text-decoration: none;
+        text-shadow: 1px 1px 4px #666; }
+      @media (min-width: 768px) {
+        .post ul.styled li a:hover {
+          color: #13042b; } }
   .post.map section {
     margin: 20px 0; }
   .post.map #map-canvas {

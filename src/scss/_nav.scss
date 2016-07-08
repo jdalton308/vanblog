@@ -81,9 +81,11 @@
 			}
 			a {
 				color: $white;
+				text-decoration: none;
+				@include transition();
 
 				&:hover {
-					text-decoration: none;
+					text-decoration: underline;
 				}
 			}
 		}

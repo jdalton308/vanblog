@@ -140,6 +140,21 @@ button {
   }
 }
 
+.adbox {
+  width: 100%;
+  margin: 60px 0;
+  text-align: center;
+
+  h4 {
+    text-align: center;
+    margin: 0 0 10px;
+    color: $grey;
+  }
+  iframe {
+    box-shadow: $box-shadow;
+  }
+}
+
 section > h3,
 h3.underline {
   margin-bottom: 20px;
@@ -171,7 +186,7 @@ ol {
     h1,
     h2,
     h3,
-    h4 {
+    h4{
       color: $text-color;
     }
     > h4 {
