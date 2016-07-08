@@ -1,13 +1,3 @@
-Launch Date: June 17
-Launch criteria:
-- All van build posts completed
-X- Route page up
-- Email signup
-- Ads up
-- Analytics up
-- No server crashes from requests
-- Security added to server
-
 
 TODO:
 
@@ -52,19 +42,24 @@ XX Google Analytics
 Google AdSense
 - Ads in each article
 
-Amazon Affiliate
-- Add payment & tax info
-- Add to pages
+XXAmazon Affiliate
+XX- Add payment & tax info
+XX- Add to pages
+- Make responsive
+- Insert into post result lists
+Page Plan:
+- About: General
+- Route: Outdoor banner
+- Connect: Electronics
+- 
 
 Home Depot Affiliate
 
 XXPrivacy Policy
 XX- Mush disclose all 3rd party technologies, including HD affilate (CG), the use of cookies, and how to disable the use of cookies
 XX- Cookies for Home Depot Affiliate
-
 XXTerms of Use
 XX- Legal bit about lack of liability
-
 XX404 page
 
 Favicon: Tiny van OR 'J+V'

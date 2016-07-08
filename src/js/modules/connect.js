@@ -9,9 +9,6 @@ function watchForm() {
 	var $submit = $form.find('button');
 	var $message = $form.find('.form-messaging');
 
-	console.log('$inputs:');
-	console.log($inputs);
-
 	// Bind events
 	function formEvents() {
 		$inputs.on('blur', function(e) {
@@ -68,8 +65,6 @@ function watchForm() {
 				break;
 			}
 		}
-
-		console.log('Form valid: '+ formIsValid);
 
 		$submit.prop('disabled', !formIsValid);
 	}

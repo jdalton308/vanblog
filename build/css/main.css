@@ -80,6 +80,7 @@ a {
 a.button,
 button.button {
   display: inline-block;
+  margin: 0 2px 5px 0;
   padding: 5px 15px;
   text-decoration: none;
   border: none;
@@ -125,6 +126,13 @@ button.button {
     color: #666; }
   .adbox iframe {
     box-shadow: 4px 2px 20px -5px #13042b; }
+  .adbox.desktop {
+    display: none; }
+  @media (min-width: 768px) {
+    .adbox.mobile {
+      display: none; }
+    .adbox.desktop {
+      display: block; } }
 
 section > h3, .content .side-nav nav section > .nav-item,
 h3.underline,

@@ -3,6 +3,8 @@
 // ------------------------
 // - Watches for URL hash changes, then loads pages through AJAX
 
+var isMobile = (window.innerWidth < 768);
+
 var $ = require('jquery');
 var pathRef = require('../server/server-path-ref.js');
 var maps = require('./maps.js');
@@ -11,6 +13,7 @@ var instagram = require('./instagram-feed.js');
 
 
 var $pageContainer = $('main');
+var $body = $('body');
 
 // Check for unique pages
 function checkPath(path) {
@@ -79,7 +82,13 @@ function checkInitialLoad() {
 	var currentPath = window.location.pathname;
 	if (currentPath !== '/' && currentPath !== '/home') {
 		// If home, then move page down
-		$('body').addClass('scroll');
+		$body.addClass('scroll');
+
+		if (isMobile) {
+			$body.animate({
+				scrollTop: window.innerHeight
+			}, 1000);
+		}
 	}
 
 	// Check to init unique pages

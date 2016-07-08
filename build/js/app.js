@@ -9856,9 +9856,6 @@ function watchForm() {
 	var $submit = $form.find('button');
 	var $message = $form.find('.form-messaging');
 
-	console.log('$inputs:');
-	console.log($inputs);
-
 	// Bind events
 	function formEvents() {
 		$inputs.on('blur', function(e) {
@@ -9915,8 +9912,6 @@ function watchForm() {
 				break;
 			}
 		}
-
-		console.log('Form valid: '+ formIsValid);
 
 		$submit.prop('disabled', !formIsValid);
 	}
@@ -9981,7 +9976,6 @@ module.exports = getIGphotos;
 },{"jquery":1}],5:[function(require,module,exports){
 
 var $ = require('jquery');
-
 
 var $body = $('body');
 var $landing = $('.landing');
@@ -10269,6 +10263,11 @@ function init() {
 			$(this).toggleClass('open');
 		});
 	}
+	if (isMobile) {
+		$navItems.click(function(){
+			$nav.removeClass('open');
+		});
+	}
 }
 
 
@@ -10279,6 +10278,8 @@ module.exports = init;
 // ------------------------
 // - Watches for URL hash changes, then loads pages through AJAX
 
+var isMobile = (window.innerWidth < 768);
+
 var $ = require('jquery');
 var pathRef = require('../server/server-path-ref.js');
 var maps = require('./maps.js');
@@ -10287,6 +10288,7 @@ var instagram = require('./instagram-feed.js');
 
 
 var $pageContainer = $('main');
+var $body = $('body');
 
 // Check for unique pages
 function checkPath(path) {
@@ -10355,7 +10357,13 @@ function checkInitialLoad() {
 	var currentPath = window.location.pathname;
 	if (currentPath !== '/' && currentPath !== '/home') {
 		// If home, then move page down
-		$('body').addClass('scroll');
+		$body.addClass('scroll');
+
+		if (isMobile) {
+			$body.animate({
+				scrollTop: window.innerHeight
+			}, 1000);
+		}
 	}
 
 	// Check to init unique pages

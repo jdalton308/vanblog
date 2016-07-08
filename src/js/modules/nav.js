@@ -28,6 +28,11 @@ function init() {
 			$(this).toggleClass('open');
 		});
 	}
+	if (isMobile) {
+		$navItems.click(function(){
+			$nav.removeClass('open');
+		});
+	}
 }
 
 
