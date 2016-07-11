@@ -45,13 +45,8 @@ Google AdSense
 XXAmazon Affiliate
 XX- Add payment & tax info
 XX- Add to pages
-- Make responsive
+XX- Make responsive
 - Insert into post result lists
-Page Plan:
-- About: General
-- Route: Outdoor banner
-- Connect: Electronics
-- 
 
 Home Depot Affiliate
 
@@ -62,7 +57,8 @@ XXTerms of Use
 XX- Legal bit about lack of liability
 XX404 page
 
-Favicon: Tiny van OR 'J+V'
+XX Favicon: Tiny van OR 'J+V'
+Robots.txt
 
 Make real posts:
 - Van:
