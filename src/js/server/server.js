@@ -2,7 +2,7 @@
 
 const http = require('http');
 const router = require('./server-router.js');
-const EC2_IP = '52.11.115.75';
+const EC2_IP = 'ec2-52-11-115-75.us-west-2.compute.amazonaws.com';
 
 
 // Create Server
