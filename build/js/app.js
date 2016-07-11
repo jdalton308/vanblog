@@ -10080,16 +10080,11 @@ var locations = [
 
 // Create Map
 //--------------------
-// TODO: 
-// - List cities
-// - Draw line bewteen points. On road?
-// - Color map
 function drawMap() {
 	var canvas = document.getElementById('map-canvas');
 	var mapOptions = {
 		center: {lat:37.8715926, lng:-122.27274699999998},
 		zoom: 8,
-		// mapTypeId: google.maps.MapTypeId.TERRAIN
 	};
 
 	var map = new google.maps.Map(canvas, mapOptions);
@@ -10265,6 +10260,7 @@ function init() {
 	}
 	if (isMobile) {
 		$navItems.click(function(){
+			// console.log('removing open class...');
 			$nav.removeClass('open');
 		});
 	}

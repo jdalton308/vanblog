@@ -30,6 +30,7 @@ function init() {
 	}
 	if (isMobile) {
 		$navItems.click(function(){
+			// console.log('removing open class...');
 			$nav.removeClass('open');
 		});
 	}
