@@ -32,6 +32,8 @@ XXBuild Node.js server
 XX- Routing
 XX- See Google Doc for planning
 XX- Create a "no posts found" response
+- Express
+- node forever
 
 XX- Hide landing screen if not at '/' or '/home'
 
@@ -58,7 +60,7 @@ XX- Legal bit about lack of liability
 XX404 page
 
 XX Favicon: Tiny van OR 'J+V'
-Robots.txt
+XX Robots.txt
 
 Make real posts:
 - Van:
