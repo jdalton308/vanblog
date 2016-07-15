@@ -44,14 +44,14 @@ let posts = [
 		'link': '/blog/post/van-carpentry',
 		'description': 'The woodwork within the van: The bed frame, shelves, and sink counter.'
 	},
-	{
-		'name': 'Van Build: Online Resources',
-		'date': '6.13.2016',
-		'categories': ['Van'],
-		// 'thumbnail': '/path/to/thumbnail'(?),
-		'link': '/blog/post/van-build-resources',
-		'description': 'A collection of other resouces for building a van, including websites, forums, and videos.'
-	}
+	// {
+	// 	'name': 'Van Build: Online Resources',
+	// 	'date': '6.13.2016',
+	// 	'categories': ['Van'],
+	// 	// 'thumbnail': '/path/to/thumbnail'(?),
+	// 	'link': '/blog/post/van-build-resources',
+	// 	'description': 'A collection of other resouces for building a van, including websites, forums, and videos.'
+	// }
 ];
 
 module.exports = posts;

@@ -32,7 +32,7 @@ XXBuild Node.js server
 XX- Routing
 XX- See Google Doc for planning
 XX- Create a "no posts found" response
-- Express
+XX- Express
 - node forever
 
 XX- Hide landing screen if not at '/' or '/home'
@@ -88,7 +88,7 @@ X	- Sketch and photograph plans for bed and shelves
 
 
 
-Deployment Checklist
+Deployment QA Checklist
 - Sharing data on FB and Twitter
 - Instagram posts
 - Google Analytics/Tag Manager working

@@ -10,8 +10,11 @@ const instagram = require('./server-instagram.js');
 
 // CREATE SERVER
 //======================
+
 // Static Files
+//---------------
 app.use(express.static('/'));
+
 
 // Routing:
 //------------
@@ -19,7 +22,6 @@ app.use(express.static('/'));
 // - Internal request: Post Summary page for a category
 // - Instagram api
 // - All initial website requests, which need to insert the desired page into the homepage
-//---------------
 
 // Category page (only from internal links, so just return a built post-summary page
 app.get('/cat/:category', (req, res) => {
