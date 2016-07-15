@@ -2,15 +2,11 @@
 
 const http = require('http');
 const express = require('express');
-const router = require('./server-router.js');
 const app = express();
 
-
-const fs = require('fs');
-const postRef = require('./server-post-ref.js');
 const render = require('./server-render.js');
-const pathRef = require('./server-path-ref.js');
 const instagram = require('./server-instagram.js');
+
 
 // CREATE SERVER
 //======================
@@ -18,44 +14,29 @@ const instagram = require('./server-instagram.js');
 app.use(express.static('/'));
 
 // Routing:
-// - Home
+//------------
 // - Static Pages
-// - Blog posts
+// - Internal request: Post Summary page for a category
 // - Instagram api
+// - All initial website requests, which need to insert the desired page into the homepage
 //---------------
-// Home
-app.get(['/', '/home', '/latest'], (req, res) => {
-	console.log('Home request');
-	res.send('Home page');
-});
 
-// Pages
-app.get('/:page', (req, res, next) => {
-	if (req.params.page === 'blog') {
-		next('route');
-	}
-	res.send('Page request for '+ req.params.page);
-});
-
-// Blog
-app.get(['/blog', '/blog/:cat'], (req, res) => {
-	console.log('Recieved category request');
-	let category = req.params.cat;
-	if (category === undefined || category == null) {
-		category = 'all';
-	}
-	res.send('Category request for '+ category);
-});
-app.get('/blog/post/:postname', (req, res) => {
-	console.log('Recieved post request');
-	res.send('Request for blog post: '+ req.params.postname);
+// Category page (only from internal links, so just return a built post-summary page
+app.get('/cat/:category', (req, res) => {
+	let HTMLresponse = render.renderCat( req.params.category );
+	res.send( HTMLresponse );
 });
 
 
 // Instagram API
 app.get('/instagram-data', (req, res) => {
 	console.log('Recieved instagram data request');
-	// return instagram(res);
+	instagram(res);
+});
+
+// Catch-all. Basically any first request to load the entire website. After that, all requests will be either static files or for the category page above
+app.get('/', (req, res) => {
+	render.renderHome(req, res);
 });
 
 

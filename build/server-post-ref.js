@@ -9,7 +9,7 @@ let posts = [
 		'date': '6.1.2016',
 		'categories': ['Van'],
 		// 'thumbnail': '/path/to/thumbnail'(?),
-		'link': '/blog/van-model',
+		'link': '/blog/post/van-model',
 		'description': 'Some of the van models I considered when shopping, and the important features I took into account.'
 	},
 	{
@@ -17,7 +17,7 @@ let posts = [
 		'date': '6.3.2016',
 		'categories': ['Van'],
 		// 'thumbnail': '/path/to/thumbnail'(?),
-		'link': '/blog/van-flooring',
+		'link': '/blog/post/van-flooring',
 		'description': 'Assembling the laminate flooring, with the underlayment and subfloor.'
 	},
 	{
@@ -25,7 +25,7 @@ let posts = [
 		'date': '6.4.2016',
 		'categories': ['Van'],
 		// 'thumbnail': '/path/to/thumbnail'(?),
-		'link': '/blog/van-insulation',
+		'link': '/blog/post/van-insulation',
 		'description': 'The simple insulation I used around the walls and ceiling.'
 	},
 	{
@@ -33,7 +33,7 @@ let posts = [
 		'date': '6.5.2016',
 		'categories': ['Van'],
 		// 'thumbnail': '/path/to/thumbnail'(?),
-		'link': '/blog/van-walls',
+		'link': '/blog/post/van-walls',
 		'description': 'How we put up the wood paneling around the walls and ceiling of the van.'
 	},
 	{
@@ -41,7 +41,7 @@ let posts = [
 		'date': '6.6.2016',
 		'categories': ['Van'],
 		// 'thumbnail': '/path/to/thumbnail'(?),
-		'link': '/blog/van-carpentry',
+		'link': '/blog/post/van-carpentry',
 		'description': 'The woodwork within the van: The bed frame, shelves, and sink counter.'
 	},
 	{
@@ -49,7 +49,7 @@ let posts = [
 		'date': '6.13.2016',
 		'categories': ['Van'],
 		// 'thumbnail': '/path/to/thumbnail'(?),
-		'link': '/blog/van-build-resources',
+		'link': '/blog/post/van-build-resources',
 		'description': 'A collection of other resouces for building a van, including websites, forums, and videos.'
 	}
 ];

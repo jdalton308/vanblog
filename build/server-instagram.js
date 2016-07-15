@@ -13,21 +13,21 @@ instagramAPI = new instagramAPI(access_token);
 
 
 // Get photos. Returns a promise
-function getPhotoData(res1) {
+function getPhotoData(res) {
 	instagramAPI.userSelfMedia().then(
 		(data) => {
-			console.log('Recieved IG data...');
-			res1.writeHead(200, {'Content-Type': 'application/json'});
-			// console.log(data);
-			// let stringData = data.toString('utf8');
-			let jsonData = JSON.stringify(data);
-			res1.end(jsonData);
+			// console.log('Recieved IG data...');
+			// res.writeHead(200, {'Content-Type': 'application/json'});
+			// let jsonData = JSON.stringify(data);
+			// res.end(jsonData);
+			res.json(data);
 		}
 	).catch(
 		(error) => {
 			console.log(error);
-			res1.writeHead(500);
-			res1.end(error);
+			// res.writeHead(500);
+			// res.end(error);
+			res.status(500).end(error);
 		}
 	);
 
