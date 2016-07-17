@@ -24,12 +24,12 @@ var pathRef = {
 	'/blog/latest': '/cat/Latest',
 
 	// Posts
-	'/blog/van-model': '/posts/1-van-modelchoice.html',
-	'/blog/van-flooring': '/posts/2-1-van-flooring.html',
-	'/blog/van-insulation': '/posts/2-2-van-insulation.html',
-	'/blog/van-walls': '/posts/2-3-van-walls-ceiling.html',
-	'/blog/van-carpentry': '/posts/2-van-carpentry.html',
-	'/blog/van-build-resources': '/posts/7-van-other_resources.html'
+	'/blog/post/van-model': '/posts/1-van-modelchoice.html',
+	'/blog/post/van-flooring': '/posts/2-1-van-flooring.html',
+	'/blog/post/van-insulation': '/posts/2-2-van-insulation.html',
+	'/blog/post/van-walls': '/posts/2-3-van-walls-ceiling.html',
+	'/blog/post/van-carpentry': '/posts/2-van-carpentry.html',
+	'/blog/post/van-build-resources': '/posts/7-van-other_resources.html'
 }
 
 module.exports = pathRef;

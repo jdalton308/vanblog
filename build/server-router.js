@@ -24,14 +24,17 @@ function isStaticFile(path) {
 	let dotRegEx = /[a-z0-9]\.[a-z]/i;
 	return dotRegEx.test(path);
 }
+// URL = /*.svg
 function isSvgFile(path) {
 	let svgRegEx = /\.svg/i;
 	return svgRegEx.test(path);
 }
+// URL = '/cat/...'
 function isCatRequest(path) {
 	let catRegEx = /\/cat\//i;
 	return catRegEx.test(path);
 }
+// URL = '/instagram-data'
 function isIGRequest(path) {
 	let catRegEx = /\/instagram-data/i;
 	return catRegEx.test(path);
@@ -71,7 +74,7 @@ function requestHome(path, res) {
 	return fs.readFile('./index.html', 'utf8', (err, data) => {
 		if (err) {
 			console.log('File not found: ./index.html');
-			res.writeHead(404);
+			res.writeHead(503);
 			res.end();
 			return;
 		}
@@ -112,11 +115,12 @@ function route(req, res) {
 		console.log('Request for static file');
 		return requestStaticFile('.'+ requestPath, res);
 
-	// Request for generated category page
-	} else if (isCatRequest(requestPath)){
-		// Render the category HTML
-		console.log('Category page request');
-		return requestCatSummary(requestPath, res);
+	// ** This 'category' request would not happen here **
+	// // Request for generated category page
+	// } else if (isCatRequest(requestPath)){
+	// 	// Render the category HTML
+	// 	console.log('Category page request');
+	// 	return requestCatSummary(requestPath, res);
 
 	// Request for Instagram photos
 	} else if (isIGRequest(requestPath)){

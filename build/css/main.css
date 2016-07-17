@@ -280,13 +280,13 @@ ol li {
         text-decoration: underline; }
 
 @media (min-width: 768px) {
-  .content .side-nav {
-    height: 100vh; }
   .content .mobile-nav-btn {
     display: none; }
   .content .side-nav {
     position: relative;
-    overflow-y: auto; }
+    overflow-y: auto;
+    height: 100vh;
+    padding: 0; }
     .content .side-nav .up-button {
       display: inline-block;
       position: absolute;
@@ -300,8 +300,10 @@ ol li {
     .content .side-nav .mobile-up-button {
       display: none; }
     .content .side-nav .side-nav-cont {
-      padding-top: 30vh;
+      position: relative;
+      min-height: 100%;
       width: 100%;
+      padding: 30vh 0 50px;
       text-align: center; }
       .content .side-nav .side-nav-cont h1 {
         margin-bottom: 40px;

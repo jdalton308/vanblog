@@ -1,9 +1,11 @@
 'use strict';
 
 const postRef = require('./server-post-ref.js');
+const pathRef = require('./server-path-ref.js');
 const fs = require('fs');
 
 const postTemplatePath = './posts/summary-post.template.html';
+const homepagePath = './index.html';
 
 
 function createPostHTML(postObj, template) {
@@ -18,11 +20,15 @@ function createPostHTML(postObj, template) {
 	return postHTML;
 }
 
-function renderCat(path){
-	// console.log('renderCat() called');
+// URL = '/cat/...'
+function isSummaryRequest(path) {
+	let catRegEx = /\/cat\//i;
+	return catRegEx.test(path);
+}
 
-	let category = path.replace('/cat/', '');
-	// console.log('category: '+ category);
+// Build post-summary page
+//---------------------------
+function renderCat(category){
 
 	// Get template for post summary
 	let templateHTML = fs.readFileSync(postTemplatePath, 'utf8');
@@ -61,5 +67,50 @@ function renderCat(path){
 	return pageHTML;
 }
 
+function renderHome(req, res) {
+	
+	// Get appropriate HTML for home
+	return fs.readFile(homepagePath, 'utf8', (err, data) => {
 
-module.exports.renderCat = renderCat
+		// If cannot locate index.html...
+		if (err) {
+			console.log('File not found: '+ homepagePath);
+			// res.writeHead(503);
+			// res.end();
+			res.status(503).end();
+			return;
+		}
+
+		// console.log('Request URL: '+ req.url);
+
+		// Decide what content goes into home
+		// - Get 'targetPath' from pathRef and req.url
+		let targetPath = pathRef[req.url];
+
+		// - If not a path...
+		if (targetPath == null || targetPath == undefined) {
+			targetPath = pathRef['/404'];
+		}
+
+		let targetContent;
+
+		// Fetch and insert the desired content
+		// - Any page with '/cat/' needs to be built from JSON
+		// - All other pages (blog posts and static pages) are just retrieved and inserted
+		if (isSummaryRequest(targetPath)) {
+			let category = targetPath.replace('/cat/', '');
+			targetContent = renderCat(category);
+		} else {
+			targetContent = fs.readFileSync('.'+ targetPath, 'utf8');
+		}
+
+		// Insert content
+		let pageHTML = data.replace('{{Loading...}}', targetContent);
+
+		// Return
+		res.send(pageHTML);
+	});
+}
+
+module.exports.renderCat = renderCat;
+module.exports.renderHome = renderHome;
