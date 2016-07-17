@@ -104,15 +104,14 @@
 		}
 	}
 	@media (min-width: $mobile) {
-		.side-nav {
-			height: 100vh;
-		}
 		.mobile-nav-btn {
 			display: none;
 		}
 		.side-nav {
 			position: relative;
 			overflow-y: auto;
+			height: 100vh;
+			padding: 0;
 			
 			.up-button {
 				display: inline-block;
@@ -126,8 +125,10 @@
 			}
 			.side-nav-cont {
 				// @include centerMe();
-				padding-top: 30vh;
+				position: relative;
+				min-height: 100%;
 				width: 100%;
+				padding: 30vh 0 50px;
 				text-align: center;
 
 				h1 {

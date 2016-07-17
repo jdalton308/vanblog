@@ -42,7 +42,7 @@ app.get('/instagram-data', (req, res) => {
 });
 
 // Catch-all. Basically any first request to load the entire website. After that, all requests will be either static files or for the category page above
-app.get('/', (req, res) => {
+app.get('*', (req, res) => {
 	// console.log('Home request');
 	render.renderHome(req, res);
 });
