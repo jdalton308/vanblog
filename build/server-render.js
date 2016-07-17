@@ -1,6 +1,7 @@
 'use strict';
 
 const postRef = require('./server-post-ref.js');
+const pathRef = require('./server-path-ref.js');
 const fs = require('fs');
 
 const postTemplatePath = './posts/summary-post.template.html';
@@ -67,8 +68,11 @@ function renderCat(category){
 }
 
 function renderHome(req, res) {
+	
 	// Get appropriate HTML for home
 	return fs.readFile(homepagePath, 'utf8', (err, data) => {
+
+		// If cannot locate index.html...
 		if (err) {
 			console.log('File not found: '+ homepagePath);
 			// res.writeHead(503);
@@ -77,8 +81,13 @@ function renderHome(req, res) {
 			return;
 		}
 
+		// console.log('Request URL: '+ req.url);
+
 		// Decide what content goes into home
-		let targetPath = pathRef[path];
+		// - Get 'targetPath' from pathRef and req.url
+		let targetPath = pathRef[req.url];
+
+		// - If not a path...
 		if (targetPath == null || targetPath == undefined) {
 			targetPath = pathRef['/404'];
 		}
@@ -89,8 +98,8 @@ function renderHome(req, res) {
 		// - Any page with '/cat/' needs to be built from JSON
 		// - All other pages (blog posts and static pages) are just retrieved and inserted
 		if (isSummaryRequest(targetPath)) {
-			let category = path.replace('/cat/', '');
-			targetContent = render.renderCat(category);
+			let category = targetPath.replace('/cat/', '');
+			targetContent = renderCat(category);
 		} else {
 			targetContent = fs.readFileSync('.'+ targetPath, 'utf8');
 		}

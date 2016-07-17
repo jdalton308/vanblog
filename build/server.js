@@ -11,9 +11,13 @@ const instagram = require('./server-instagram.js');
 // CREATE SERVER
 //======================
 
+// app.all('*', (req, res) => {
+// 	console.log('Request from '+ req.url);
+// });
+
 // Static Files
 //---------------
-app.use(express.static('/'));
+app.use(express.static( __dirname ));
 
 
 // Routing:
@@ -25,6 +29,7 @@ app.use(express.static('/'));
 
 // Category page (only from internal links, so just return a built post-summary page
 app.get('/cat/:category', (req, res) => {
+	// console.log('Category request');
 	let HTMLresponse = render.renderCat( req.params.category );
 	res.send( HTMLresponse );
 });
@@ -32,16 +37,20 @@ app.get('/cat/:category', (req, res) => {
 
 // Instagram API
 app.get('/instagram-data', (req, res) => {
-	console.log('Recieved instagram data request');
+	// console.log('Recieved instagram data request');
 	instagram(res);
 });
 
 // Catch-all. Basically any first request to load the entire website. After that, all requests will be either static files or for the category page above
 app.get('/', (req, res) => {
+	// console.log('Home request');
 	render.renderHome(req, res);
 });
 
 
 // Start server
 //-----------------
-app.listen(3000, () => console.log('Server started on port 3000') );
+app.listen(3000, () => {
+	console.log('Server started on port 3000');
+	// console.log('Root directory: '+ __dirname);
+});
