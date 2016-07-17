@@ -50,7 +50,7 @@ app.get('*', (req, res) => {
 
 // Start server
 //-----------------
-app.listen(80, EC2_IP, () => {
+app.listen(80, () => {
 	console.log("Server started on port 80 for "+ EC2_IP);
 	// console.log('Root directory: '+ __dirname);
 });
