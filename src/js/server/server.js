@@ -17,7 +17,7 @@ const instagram = require('./server-instagram.js');
 
 // Static Files
 //---------------
-app.use(express.static( __dirname ));
+app.use(express.static( __dirname, {index: false} ));
 
 
 // Routing:
