@@ -30,8 +30,12 @@ app.use(express.static( __dirname, {index: false} ));
 // Category page (only from internal links, so just return a built post-summary page
 app.get('/cat/:category', (req, res) => {
 	// console.log('Category request');
-	let HTMLresponse = render.renderCat( req.params.category );
-	res.send( HTMLresponse );
+	try {
+		let HTMLresponse = render.renderCat( req.params.category );
+		res.send( HTMLresponse );
+	} catch (e) {
+		res.status(503).end();
+	}
 });
 
 
@@ -46,6 +50,29 @@ app.get('*', (req, res) => {
 	// console.log('Home request');
 	render.renderHome(req, res);
 });
+
+
+// Catch errors
+// - Took functions right from express.js docs
+function logErrors(err, req, res, next) {
+	console.error(err.stack);
+	next(err);
+}
+function clientErrorHandler(err, req, res, next) {
+	if (req.xhr) {
+		res.status(500).send({ error: 'Something failed!' });
+	} else {
+		next(err);
+	}
+}
+function errorHandler(err, req, res, next) {
+	res.status(500);
+	res.render('error', { error: err });
+}
+
+app.use( logErrors );
+app.use( clientErrorHandler );
+app.use( errorHandler );
 
 
 // Start server
