@@ -83,32 +83,37 @@ function renderHome(req, res) {
 
 		// console.log('Request URL: '+ req.url);
 
-		// Decide what content goes into home
-		// - Get 'targetPath' from pathRef and req.url
-		let targetPath = pathRef[req.url];
+		try {
 
-		// - If not a path...
-		if (targetPath == null || targetPath == undefined) {
-			targetPath = pathRef['/404'];
+			// Decide what content goes into home
+			// - Get 'targetPath' from pathRef and req.url
+			let targetPath = pathRef[req.url];
+
+			// - If not a path...
+			if (targetPath == null || targetPath == undefined) {
+				targetPath = pathRef['/404'];
+			}
+
+			let targetContent;
+
+			// Fetch and insert the desired content
+			// - Any page with '/cat/' needs to be built from JSON
+			// - All other pages (blog posts and static pages) are just retrieved and inserted
+			if (isSummaryRequest(targetPath)) {
+				let category = targetPath.replace('/cat/', '');
+				targetContent = renderCat(category);
+			} else {
+				targetContent = fs.readFileSync('.'+ targetPath, 'utf8');
+			}
+
+			// Insert content
+			let pageHTML = data.replace('{{Loading...}}', targetContent);
+
+			// Return
+			res.send(pageHTML);
+		} catch (e) {
+			res.status(503).end();
 		}
-
-		let targetContent;
-
-		// Fetch and insert the desired content
-		// - Any page with '/cat/' needs to be built from JSON
-		// - All other pages (blog posts and static pages) are just retrieved and inserted
-		if (isSummaryRequest(targetPath)) {
-			let category = targetPath.replace('/cat/', '');
-			targetContent = renderCat(category);
-		} else {
-			targetContent = fs.readFileSync('.'+ targetPath, 'utf8');
-		}
-
-		// Insert content
-		let pageHTML = data.replace('{{Loading...}}', targetContent);
-
-		// Return
-		res.send(pageHTML);
 	});
 }
 
