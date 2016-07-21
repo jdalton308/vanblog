@@ -1026,7 +1026,7 @@ ol li {
         text-shadow: 1px 1px 4px #666; }
       @media (min-width: 768px) {
         .post ul.styled li a:hover {
-          color: #13042b; } }
+          text-shadow: none; } }
   .post.map section {
     margin: 20px 0; }
   .post.map #map-canvas {
@@ -1044,7 +1044,8 @@ ol li {
     min-width: 40%;
     margin: 0 100px 20px 0;
     padding: 10px 20px;
-    text-align: center; }
+    text-align: center;
+    text-decoration: none; }
     .post.connect .connect-item:nth-child(even) {
       margin-right: 0; }
     .post.connect .connect-item .icon {

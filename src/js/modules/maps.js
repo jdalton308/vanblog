@@ -25,15 +25,11 @@ var locations = [
 		position: {lat:39.249683, lng:-119.95268470000002}
 	},
 	{
-		title: 'Susanville, CA',
-		position: {lat:40.4162842, lng:-120.65300630000002}
+		title: 'Mt. Shasta',
+		position: {lat:41.4093393, lng:-122.1985981}
 	},
 	{
-		title: 'Klamath Falls, CA',
-		position: {lat:42.224867, lng:-121.7816704}
-	},
-	{
-		title: 'Crater Lake, OR',
+		title: 'Crater Lake National Park',
 		position: {lat:42.9445872, lng:-122.1090039}
 	},
 	{
@@ -41,24 +37,60 @@ var locations = [
 		position: {lat:44.05817279999999, lng:-121.31530959999998}
 	},
 	{
-		title: 'Smith Rock, OR',
+		title: 'Smith Rock State Park, OR',
 		position: {lat:44.36761240000001, lng:-121.13898749999998}
-	},
-	{
-		title: 'Ellensburg, OR',
-		position: {lat:46.9965144, lng:-120.54784740000002}
 	},
 	{
 		title: 'Leavenworth, WA',
 		position: {lat:47.5962326, lng:-120.66147649999999}
 	},
 	{
+		title: 'Portland, OR',
+		position: {lat: 45.5231, lng:-122.6765}
+	},
+	{
 		title: 'Seattle, WA',
 		position: {lat: 47.6062095, lng:-122.3320708}
 	},
 	{
-		title: 'Portland, OR',
-		position: {lat: 45.5231, lng:-122.6765}
+		title: 'Spokane, WA',
+		position: {lat: 47.6062095, lng:-122.3320708}
+	},
+	{
+		title: 'Brush Lake, ID',
+		position: {lat: 48.887544, lng:-116.3314314}
+	},
+	{
+		title: 'Whitefish, MT',
+		position: {lat: 48.4296597, lng:-114.4404459}
+	},
+	{
+		title: 'Glacier National Park',
+		position: {lat: 48.7596163, lng:-113.7892112}
+	},
+	{
+		title: 'Missoula, MT',
+		position: {lat: 46.8764175, lng:-114.0882065}
+	},
+	{
+		title: 'Bozeman, MT',
+		position: {lat: 45.6795612, lng:-111.0859213}
+	},
+	{
+		title: 'Yellowstone National Park',
+		position: {lat: 44.4279828, lng:-110.597209}
+	},
+	{
+		title: 'Grand Teton National Park',
+		position: {lat: 43.7904321, lng:-110.6839514}
+	},
+	{
+		title: 'Jackson, WY',
+		position: {lat: 43.4745489, lng:-110.793107}
+	},
+	{
+		title: 'Boulder, CO',
+		position: {lat: 40.0294203, lng:-105.3100171}
 	},
 
 ];

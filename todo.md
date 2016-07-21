@@ -33,7 +33,7 @@ XX- Routing
 XX- See Google Doc for planning
 XX- Create a "no posts found" response
 XX- Express
-- node forever
+XX- node forever
 
 XX- Hide landing screen if not at '/' or '/home'
 
@@ -67,12 +67,12 @@ Make real posts:
 X	- Model choice
 X	- Carpentry
 X	- Sketch and photograph plans for bed and shelves
-/	- Electrical
-/	- Plumbing
-/	- Organization
-/	- Total cost
+	- Total cost
+	- Electrical
+	- Plumbing
+	- Organization
 	- Construction overview
-	- Other build-out resources: -Websites -Forums -Videos
+X	- Other build-out resources: -Websites -Forums -Videos
 	- 3 mo check-in: What would I do differently
 	- Parking
 	- Eating
@@ -83,6 +83,8 @@ X	- Sketch and photograph plans for bed and shelves
 	- Leavenworth
 	- Seattle
 	- Portland
+	- Montana
+	- Boulder
 - Climbing
 	- (Travel spots)
 
