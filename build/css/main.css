@@ -1026,7 +1026,7 @@ ol li {
         text-shadow: 1px 1px 4px #666; }
       @media (min-width: 768px) {
         .post ul.styled li a:hover {
-          color: #13042b; } }
+          text-shadow: none; } }
   .post.map section {
     margin: 20px 0; }
   .post.map #map-canvas {

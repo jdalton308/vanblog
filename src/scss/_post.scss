@@ -108,7 +108,7 @@
 			@media (min-width: $mobile) {
 				a {
 					&:hover {
-						color: $text-color;
+						text-shadow: none;
 					}
 				}
 			}
