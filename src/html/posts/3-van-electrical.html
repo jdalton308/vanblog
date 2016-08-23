@@ -4,58 +4,254 @@
 	<h2 class="post-title">Van Build: Electrical</h2>
 
 	<div class="post-body">
-		<p></p>
+		<p>More than any other part of the van, planning the electrical system required the most research and learning for me. I had taken a few physics classes and understood electricity, but I was clueless on how to choose wire gauges, what the solar charge-controller did, and how big of a battery to choose. But, slowly, I figured these out.</p>
+		<p>First I will walk through the steps I took to plan my solar system, so I knew what size of solar panel and battery to purchase, then I'll walk through everything I have wired up in the van.</p>
 		
 		<h4>Contents:</h4>
 		<ul class="styled">
+			<li><a href="#planning">Planning and Calculations</a></li>
 			<li><a href="#solar">Solar System</a></li>
+			<li><a href="#solar">Fuse Box</a></li>
 			<li><a href="#lights">Lights</a></li>
-			<li><a href="#fridge">Fridge</a></li>
-			<li><a href="#ceiling">Ceiling Fan</a></li>
+			<!-- <li><a href="#fridge">Fridge</a></li>
+			<li><a href="#ceiling">Ceiling Fan</a></li> -->
 			<li><a href="#security">Infra-red Security System</a></li>
 		</ul>
 
-		<section>
+		<section id="planning">
+			<h3>Planning and Calculations</h3>
+			<p>For without foresight, we have only three-sight.</p>
+			<ol>
+				<li>
+					<h4>Decide what needs power</h4>
+					<p>It will be pretty tough to figure out how much energy to store and how large the solar panels should be without understanding how much energy you will actually need each day. You will probably have done this already, but make a list of everything that can draw energy.</p>
+					<p>A couple things, lights in particular, would be easy to run off of batteries, but I think if you are taking the time to wire up a battery with solar, then running some extra wire should be worth it. Plus, then you save having to find a spot to recycle batteries.</p>
+					<p>For me, this list was pretty short: Lights, refrigerator, ceiling vent, and sometimes plugging in my laptop and phone, which meant adding an inverter.</p>
+				</li>
+				<li>
+					<h4>Decide how often you will need power</h4>
+					<p>Next, take the list of items and estimate how many hours per day they will be drawing electricity. This will be used to calculate the number of amp-hours of electricity used each day, which will be the basis for deciding how large the solar panels and battery, or batteries, should be.</p>
+					<p>This estimation can be difficult, so do yourself a favor and error on the side of over-estimating. I guessed a little short on my use, and I am reminded of it almost everyday.</p>
+					<p>This is what my estimated use looked like:</p>
+					<table>
+						<thead>
+							<tr>
+								<th>Item</th>
+								<th>Hour Used per Day</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>Lights</td>
+								<td>4</td>
+							</tr>
+							<tr>
+								<td>Refrigerator</td>
+								<td>6</td>
+							</tr>
+							<tr>
+								<td>Fan</td>
+								<td>1</td>
+							</tr>
+							<tr>
+								<td>Phone</td>
+								<td>3</td>
+							</tr>
+							<tr>
+								<td>Computer</td>
+								<td>1</td>
+							</tr>
+						</tbody>
+					</table>
+				</li>
+				<li>
+					<h4>Calculate Total Amp-hours per Day</h4>
+					<p>Now look-up how many amps(A) each item pulls when it is on or running. This should be on a label somewhere, or can probably be found online. (For more about electrical properties, here is a simple and useful <a href="//owlcation.com/stem/Watt-are-Amps-and-Volts" target="_blank">page</a>)</p>
+					<table>
+						<thead>
+							<tr>
+								<th>Item</th>
+								<th>Hours/Day</th>
+								<th>Amps</th>
+								<th>Ah/Day</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>4 Lights</td>
+								<td>3</td>
+								<td>0.4 (each)</td>
+								<td>4.8</td>
+							</tr>
+							<tr>
+								<td>Refrigerator</td>
+								<td>5</td>
+								<td>2.5</td>
+								<td>12.5</td>
+							</tr>
+							<tr>
+								<td>Fan</td>
+								<td>1</td>
+								<td>2</td>
+								<td>2</td>
+							</tr>
+							<tr>
+								<td>Phone</td>
+								<td>3</td>
+								<td>2</td>
+								<td>2</td>
+							</tr>
+							<tr>
+								<td>Computer</td>
+								<td>1</td>
+								<td>3.5</td>
+								<td>3.5</td>
+							</tr>
+							<tr>
+								<td>TOTAL</td>
+								<td colspan="3">24.8 Ah/Day</td>
+							</tr>
+						</tbody>
+					</table>
+				</li>
+				<li>
+					<h4>Estimate the Size of your Battery and Solar Panels</h4>
+					<p>With the amount of Amp-hours needed each day, consider how long you might need to last without any charging. I thought that three days would be fine, but if this is a winter van then maybe you will want to last longer. So, three days x 24.8 Ah/day = 74.4 Ah. So I would want a battery that has at least 74.4 Amp-hours. I just rounded up and ordered a <a href="http://amzn.to/2aluRA8" target="_blank">100 Ah battery</a>. If you need more than one battery can hold, then, of course, you will need to connect a couple smaller ones in parallel to maintain the same voltage.</p>
+					<p>So then when planning for the amount of solar power you will need, again, consider your conditions. In a 12V system, a 100W solar panel will produce a current of 8.3 A. A current of 8.3 A for one hour is 8.3 Ah, so on a day with 12 hours of daylight, you would get a maximum charge of 99.6 Ah.  But, unfortunately, the real world is not a physics lab, and the maximum power output of the panel might only be achieved for a couple hours a day, and that assumes there are no shadows falling on the panel. I would expect only about 60-70% of what you calculated to be the actual output, but check some forums for the solar panel you decide on to see what other people are experiencing.</p>
+					<p>And that should be it. By this point, you should have a pretty good idea of the size of battery and solar panel(s) you will want in your set-up. Next I'll go over how I installed the solar system in my van.</p>
+				</li>
+			</ol>
+		</section>
+
+
+		<section id="solar">
 			<h3>Solar System</h3>
 			<h4>Materials</h4>
-			<ul class="styled"></ul>
+			<ul class="styled">
+				<li><a href="http://amzn.to/2aluRA8" target="_blank">12V 100Ah AGM Battery</a></li>
+				<li><a href="" target="_blank">Renogy 100W 12V Polycrystaline Solar Panel</a></li>
+				<li><a href="" target="_blank">MC4 Connectors</a></li>
+				<li><a href="" target="_blank">Solar Charge Controller</a></li>
+				<li><a href="" target="_blank">1200W Inverter</a></li>
+				<li><a href="" target="_blank">Distribution panel/ Fuse box</a></li>
+				<li><a href="" target="_blank">Wire - 10/2</a></li>
+				<li><a href="" target="_blank">Wire - 6/2</a></li>
+			</ul>
 
 			<h4>Tools</h4>
-			<ul class="styled"></ul>
+			<ul class="styled">
+				<li><a href="" target="_blank">Wire Cutters</a></li>
+				<li><a href="" target="_blank">Duct Tape</a></li>
+				<li><a href="" target="_blank">Sikaflex</a></li>
+				<li><a href="" target="_blank">Caulk Gun</a></li>
+				<li><a href="" target="_blank">Drill</a></li>
+				<li><a href="" target="_blank">Self-driving Screws</a></li>
+			</ul>
 
+			<ol>
+				<li>
+					<h4>Attach Solar Panel</h4>
+					<p>If you have your solar panel and battery picked out, take a second and think about where the battery will go in the van.  It will be unique to your layout, but mine is pretty central, in an area that gives me easy access to all the connections. One thing I did not do was connect my battery up to the car's engine battery, which I think is a great idea and can reduce the dependecy on solar if you'll driving any distance regularly, which I am guessing you will. If you do connect into the car battery (here's a kit that let's you that in a protected way), I might move the battery closer to the front of the van so you do not need to run 12 feet of 0-gauge wire.</p>
+					<p>So with an idea of where everything will live, situate the panels on the roof how you like them, and identify a spot where the cables can run into the van. I just drilled a hole in the roof and used some Sikaflex to seal it, but I read one blog where a guy went in through the rear-view camera, which sounded like a great idea. If you do decided to drill holes for the wires to run in, either use one of <a href="">these</a>, or drill seperate holes for each wire, just large enough for the wire to fit in, and remove the MC4 heads to run it into the van. I did not do this and drilled a huge hole large enough for the whole MC4 connector to fit through, which made it more difficult to seal, but I think a smaller hole would be no problem.</p>
+					<p>When attaching the solar panel (if your panel uses screw-in brackets), use an excessive amount of Sikaflex under each bracket, and then put a dollup on top of each screw after attaching everything. That should let you sleep worry-free (of a leak) even in a hurricane.</p>
+					<p>After screwing down each panel, connnect the panels and run the wire into the van.  And that's it.</p>
+				</li>
+				<li>
+					<h4>Connect the Dots</h4>
+					<p>Now just connect everything together. Easy.</p>
+					<p>The most important thing here is to use the proper wire guage for each connection, which depends on the maximum current you will need. Along that same line, add in some circuit breakers for connections into and out of the battery.  Choose a circuit breaker rated for just under the maximum current of the wire (e.g.- For a wire gauge that can handle up to 40 A of current before melting and starting a fire, throw in a 30 A circuit breaker).</p>
+					<p>So, connecting everyting: For the solar panels, connect the positive and negative wires into the charge controller. For me, I had to strip the wire and screw-down a couple wire clamps, and I would bet yours will be the same way. REMEMBER: If your solar panel is in the sun, then these wires are live, which means don't touch them together. Then just connect everything else. Here is a simple diagram of my set-up, and what it looks like under my cabinets:</p>
+				</li>
+			</ol>
 		</section>
 
-		<section>
-			<h3>Lights</h3>
+
+		<section id="fuse">
+			<h3>Fuse Box/ Distribution Panel</h3>
 			<h4>Materials</h4>
-			<ul class="styled"></ul>
+			<ul class="styled">
+				<li><a href="" target="_blank">12V Fuse Box</a></li>
+				<li><a href="" target="_blank">Fuses</a></li>
+				<li><a href="" target="_blank">Wire - 10/2</a></li>
+				<li><a href="" target="_blank">Wire - 6/2</a></li>
+				<li><a href="" target="_blank">Terminal Connectors</a></li>
+			</ul>
 
 			<h4>Tools</h4>
-			<ul class="styled"></ul>
-
+			<ul class="styled">
+				<li><a href="" target="_blank">Wire Cutters</a></li>
+				<li><a href="" target="_blank">Sikaflex</a></li>
+				<li><a href="" target="_blank">Caulk Gun</a></li>
+				<li><a href="" target="_blank">Drill</a></li>
+				<li><a href="" target="_blank">Self-driving Screws</a></li>
+			</ul>
 		</section>
 
-		<section>
+
+		<section id="lights">
+			<h3>Lights</h3>
+
+			<p>This is probably my favorite part of the van (besides the wood paneling). I wired up four 12V LED lights into the ceiling, and put them on three dimmer switches, which is one the better decisions I made when planning this out. I put two lights over the "kitchen" area of the van, then two over the bed, but the two over the bed are each on their own dimmer. So depending on which side of the bed my head is on for the night, I only have to use that side's light. I know, it's simple and probably obvious, but it feels like a luxery.</p>
+			<p>The most difficult part here was just finding some simple 12V LED lights. After searching around online for a long time and going to some local lighting shops (I know, but that's a thing), I found another van-blog posting about finding some 12V lights at IKEA. I wouldn't have guessed, but they worked perfect, and, more importantly, are still working perfect, even as I write this.</p>
+
+			<h4>Materials</h4>
+			<ul class="styled">
+				<li><a href="">IKEA ___ LED Light Kit</a></li>
+				<li><a href="">12V Dimmer Switches</a></li>
+				<li><a href="">Wire - 22/2</a></li>
+				<li><a href="">Connectors??</a></li>				
+			</ul>
+
+			<h4>Tools</h4>
+			<ul class="styled">
+				<li><a href="">Power Drill</a></li>
+				<li><a href="">1.5" Circle Bit</a></li>
+				<li><a href="">Wire cutters</a></li>
+				<li><a href="">Wire strippers</a></li>
+				<li><a href="">Duct Tape</a></li>
+				<li><a href="">Liquid Nail</a></li>
+			</ul>
+
+			<ol>
+				<li>
+					<h4>Prep Lights and Switches</h4>
+					<p>Basically just figure out where the swithes will go, and run wire from either the distribution panel (or battery) to the switches. The amount of amp draw from the lights is super small, so you should be able to just use 22-gauge speaker wire for the connections. For me, I positioned one switch by the side door (for the kithen lights), and the other two switches in the ceiling-height bedside cabinet.</p>
+					<p>Then simply connect the lights to the switches. With the IKEA kit, I just had to cut off the transformer and the other connections, so that there was just the wire coming out of the light. The tricky part was figuring out which wire was positive and which was negative, but just touch the wires to the battery terminals to check. I think the only indication was that one of the polarities had writing on the wire, and the other didn't.</p>
+				</li>
+				<li>
+					<h4>Place the Lights</h4>
+					<p>This step came a bit after the first step, since now I had to wait until we were installing the ceiling paneling. The plan was to cut a hole through the paneling for each light, then simply glue the light onto the other side. After deciding on which boards the lights would sit on, we used a <a href="">1.5" circle bit</a> to cut each hole. Then I taped each light into place, and drew a bead of Liquid Nail around the border of the light. I was a little nervous this would not hold-up over time, but so far the lights have stayed in place, even after accidentally bumping them a few times.</p>
+				</li>
+				<li>
+					<h4>Place the Switches</h4>
+					<p>This step ended up being one of the last things I did in the entire van, just because of where the switches were placed. Placing them was pretty straightforward: Just cut a hole where they will go and screw them in place. I then made some switch-covers out of leftover cedar paneling, which I think turned out nicely.</p>
+				</li>
+			</ol>
+		</section>
+
+
+<!-- 		<section id="fridge">
 			<h3>Fridge</h3>
 			<h4>Materials</h4>
-			<ul class="styled"></ul>
+			<ul class="styled">
+				
+			</ul>
 
 			<h4>Tools</h4>
 			<ul class="styled"></ul>
-
 		</section>
 
-		<section>
+
+		<section id="ceiling">
 			<h3>Ceiling Vent and Fan</h3>
 			<h4>Materials</h4>
 			<ul class="styled"></ul>
 
 			<h4>Tools</h4>
 			<ul class="styled"></ul>
+		</section> -->
 
-		</section>
-
-		<section>
+		<section id="security">
 			<h3>Infra-red Security System</h3>
 			<h4>Coming soon</h4>
 		</section>

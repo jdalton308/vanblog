@@ -51,6 +51,14 @@ let posts = [
 		// 'thumbnail': '/path/to/thumbnail'(?),
 		'link': '/blog/post/van-build-resources',
 		'description': 'A collection of other resouces for building a van, including websites, forums, and videos.'
+	},
+	{
+		'name': 'Van Build: Electrical',
+		'date': '6.20.2016',
+		'categories': ['Van'],
+		// 'thumbnail': '/path/to/thumbnail'(?),
+		'link': '/blog/post/van-electrical',
+		'description': 'How we installed the solar system, and then got the battery, lights, fridge, and fan all connected.'
 	}
 ];
 
