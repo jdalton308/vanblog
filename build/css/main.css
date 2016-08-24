@@ -1003,11 +1003,16 @@ ol li {
     background-color: #f24b4b;
     color: #FFF;
     border-collapse: collapse; }
+    .post .van-table th {
+      background-color: #6bd6f1; }
+    .post .van-table th,
     .post .van-table td {
       padding: 10px 20px;
       border: 2px solid #FFF; }
+      .post .van-table th:first-child,
       .post .van-table td:first-child {
         font-weight: 700; }
+      .post .van-table th ul,
       .post .van-table td ul {
         margin: 0; }
   .post ul.styled {
