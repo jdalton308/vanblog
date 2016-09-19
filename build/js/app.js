@@ -10456,6 +10456,7 @@ var pathRef = {
 	'/blog/post/van-carpentry': '/posts/2-van-carpentry.html',
 	'/blog/post/van-build-resources': '/posts/7-van-other_resources.html',
 	'/blog/post/van-electrical': '/posts/3-van-electrical.html',
+	'/blog/post/van-plumbing': '/posts/4-van-plumbing.html',
 }
 
 module.exports = pathRef;

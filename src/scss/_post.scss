@@ -40,6 +40,11 @@
 			}
 		}
 	}
+	.post-list {
+		li {
+			margin-bottom: 40px;
+		}
+	}
 	section {
 		margin: 40px 0;
 
@@ -68,18 +73,19 @@
 	}
 	.van-table {
 		width: 100%;
-		margin: 0 0 20px;
-		background-color: $base-color;
+		margin: 0 0 30px;
+		// background-color: $base-color;
 		color: $white;
 		border-collapse: collapse;
+		border: 2px solid $base-color;
 
 		th {
-			background-color: $second-color;
+			background-color: $base-color;
 		}
 		th,
 		td {
 			padding: 10px 20px;
-			border: 2px solid $white;
+			border: 2px solid $base-color;
 
 			&:first-child {
 				font-weight: 700;
@@ -87,6 +93,9 @@
 			ul {
 				margin: 0;
 			}
+		}
+		td {
+			color: $base-color;
 		}
 	}
 	ul.styled {

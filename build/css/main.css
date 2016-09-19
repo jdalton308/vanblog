@@ -978,6 +978,8 @@ ol li {
     margin: 20px 0; }
     .post .post-body .button-links h4 {
       margin: 0 0 5px; }
+  .post .post-list li {
+    margin-bottom: 40px; }
   .post section {
     margin: 40px 0; }
     .post section > h3, .post .content .side-nav nav section > .nav-item, .content .side-nav nav .post section > .nav-item {
@@ -999,22 +1001,24 @@ ol li {
       color: #aaa; }
   .post .van-table {
     width: 100%;
-    margin: 0 0 20px;
-    background-color: #f24b4b;
+    margin: 0 0 30px;
     color: #FFF;
-    border-collapse: collapse; }
+    border-collapse: collapse;
+    border: 2px solid #f24b4b; }
     .post .van-table th {
-      background-color: #6bd6f1; }
+      background-color: #f24b4b; }
     .post .van-table th,
     .post .van-table td {
       padding: 10px 20px;
-      border: 2px solid #FFF; }
+      border: 2px solid #f24b4b; }
       .post .van-table th:first-child,
       .post .van-table td:first-child {
         font-weight: 700; }
       .post .van-table th ul,
       .post .van-table td ul {
         margin: 0; }
+    .post .van-table td {
+      color: #f24b4b; }
   .post ul.styled {
     margin: 20px 0;
     padding: 10px 0 10px 40px;

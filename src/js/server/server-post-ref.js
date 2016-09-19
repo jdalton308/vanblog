@@ -59,6 +59,14 @@ let posts = [
 		// 'thumbnail': '/path/to/thumbnail'(?),
 		'link': '/blog/post/van-electrical',
 		'description': 'How we installed the solar system, and then got the battery, lights, fridge, and fan all connected.'
+	},
+	{
+		'name': 'Van Build: Plumbing',
+		'date': '6.25.2016',
+		'categories': ['Van'],
+		// 'thumbnail': '/path/to/thumbnail'(?),
+		'link': '/blog/post/van-plumbing',
+		'description': 'Building the vessel sink out of a salad bowl, then installing the drain, hand-pump for water, and small water tanks.'
 	}
 ];
 
