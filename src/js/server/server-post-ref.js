@@ -67,6 +67,14 @@ let posts = [
 		// 'thumbnail': '/path/to/thumbnail'(?),
 		'link': '/blog/post/van-plumbing',
 		'description': 'Building the vessel sink out of a salad bowl, then installing the drain, hand-pump for water, and small water tanks.'
+	},
+	{
+		'name': 'Van Build: Total Price',
+		'date': '6.230.2016',
+		'categories': ['Van'],
+		// 'thumbnail': '/path/to/thumbnail'(?),
+		'link': '/blog/post/van-price',
+		'description': 'The total cost of everything that went into the van, from lumber to solar to the van itself.'
 	}
 ];
 
