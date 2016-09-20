@@ -34,6 +34,7 @@ XX- See Google Doc for planning
 XX- Create a "no posts found" response
 XX- Express
 XX- node forever
+- Set node_env to Production
 
 XX- Hide landing screen if not at '/' or '/home'
 
@@ -69,6 +70,7 @@ X	- Carpentry
 X	- Sketch and photograph plans for bed and shelves
 	- Total cost
 	- Electrical
+	- GoalZero vs Kit
 	- Plumbing
 	- Organization
 	- Construction overview

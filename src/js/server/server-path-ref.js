@@ -29,7 +29,10 @@ var pathRef = {
 	'/blog/post/van-insulation': '/posts/2-2-van-insulation.html',
 	'/blog/post/van-walls': '/posts/2-3-van-walls-ceiling.html',
 	'/blog/post/van-carpentry': '/posts/2-van-carpentry.html',
-	'/blog/post/van-build-resources': '/posts/7-van-other_resources.html'
+	'/blog/post/van-build-resources': '/posts/7-van-other_resources.html',
+	'/blog/post/van-electrical': '/posts/3-van-electrical.html',
+	'/blog/post/van-plumbing': '/posts/4-van-plumbing.html',
+	'/blog/post/van-price': '/posts/6-van-price.html',
 }
 
 module.exports = pathRef;
