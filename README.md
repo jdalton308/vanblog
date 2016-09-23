@@ -20,5 +20,5 @@ The only issue is that all `pm2` commands need to be run with `sudo`, since the 
 
 ####Updating Files
 1. SSH into the EC2 server.
-2. Go into the `/vanblog` directory, and pull the master branch of this repository down to the server
+2. Go into the `/vanblog` directory, and pull the `production` branch of this here repository down to the server
 3. From any file, run `sudo pm2 reload server`, which should reload the files with zero downtime

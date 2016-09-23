@@ -3,15 +3,17 @@
 // ------------------------
 // - Watches for URL hash changes, then loads pages through AJAX
 
-var isMobile = (window.innerWidth < 768);
-
 var $ = require('jquery');
+
 var pathRef = require('../server/server-path-ref.js');
 var maps = require('./maps.js');
 var connect = require('./connect.js');
 var instagram = require('./instagram-feed.js');
+var nav = require('./nav.js');
 
+var isMobile = (window.innerWidth < 768);
 
+var $window = $(window);
 var $pageContainer = $('main');
 var $body = $('body');
 
@@ -96,10 +98,14 @@ function checkInitialLoad() {
 }
 
 function init() {
+
+	// Bind internal scroll-to links
+	nav.bindHashes();
+
 	var $internalLinks = $('a').filter(function(i){
-		return this.hostname === window.location.hostname;
+			return (this.hash === '') && (this.hostname === window.location.hostname);
 	});
-	var $window = $(window);
+	// console.log('InternalLinks: %o', $internalLinks);
 
 
 	$internalLinks.off('click');

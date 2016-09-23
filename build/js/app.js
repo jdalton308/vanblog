@@ -9841,7 +9841,7 @@ var connect = require('./modules/connect.js');
 
 Landing();
 
-Nav();
+Nav.init();
 
 Router();
 },{"./modules/connect.js":3,"./modules/landing.js":5,"./modules/nav.js":7,"./modules/router.js":8}],3:[function(require,module,exports){
@@ -9942,7 +9942,7 @@ function getIGphotos() {
 		dataType: 'json'
 	}).done(function(data){
 			console.log('Recieved IG data:');
-			// console.log(data);
+			console.log(data);
 
 			// Remove placeholder photos
 			$photoCont.empty();
@@ -9954,8 +9954,8 @@ function getIGphotos() {
 
 				var $imgLink = $('<a href="' + post.link + '" target="_blank" class="ig-link"></a>')
 				var imgHTML = '<img src="' + imgUrl + '">';
-				var locationHTML = '<h4 class="location">' + post.location.name + '</h4>';
-				var captionHTML = '<h4 class="caption">' + post.caption.text + '</h4>';
+				var locationHTML = (post.location) ? '<h4 class="location">' + post.location.name + '</h4>' : '';
+				var captionHTML = (post.caption) ? '<h4 class="caption">' + post.caption.text + '</h4>' : '';
 
 				// Create HTML
 				$imgLink.html(imgHTML + captionHTML + locationHTML);
@@ -10272,9 +10272,7 @@ var $parentItem = $navItems.filter('.nav-parent');
 var $mobileBtn = $('.mobile-nav-btn');
 var $mobileUpBtn = $('.mobile-up-button');
 
-
-function init() {
-
+function bindHamburgerEvents() {
 	// Handle hamburger toggling
 	$mobileBtn.click(function(){
 		$nav.addClass('open');
@@ -10283,7 +10281,9 @@ function init() {
 		ev.stopPropagation();
 		$nav.removeClass('open');
 	});
+}
 
+function bindNavItemEvents() {
 	// Handle secondary-levels
 	if (!isMobile) {
 		$parentItem.click(function(){
@@ -10298,23 +10298,57 @@ function init() {
 	}
 }
 
+function bindHashLinkEvents() {
+	console.log('binding hash nav...');
 
-module.exports = init;
+	var $page = $('.main-scroll');
+	var $pageNavLink = $('a[href^="#"]');
+	
+	if ($pageNavLink.length) {
+		console.log('found hash links...');
+		console.log($pageNavLink);
+
+		$pageNavLink.click(function(e){
+			console.log('--click!')
+			e.preventDefault();
+
+			var target = $(this).attr('href');
+			var targetEl = $(target);
+			var offset = targetEl.offset().top;
+
+			$page.animate({
+				scrollTop: offset
+			}, 800);
+
+		});
+	}
+}
+
+function init() {
+	bindHamburgerEvents();
+	bindNavItemEvents();
+}
+
+
+module.exports.init = init;
+module.exports.bindHashes = bindHashLinkEvents;
 },{"jquery":1}],8:[function(require,module,exports){
 
 // Router
 // ------------------------
 // - Watches for URL hash changes, then loads pages through AJAX
 
-var isMobile = (window.innerWidth < 768);
-
 var $ = require('jquery');
+
 var pathRef = require('../server/server-path-ref.js');
 var maps = require('./maps.js');
 var connect = require('./connect.js');
 var instagram = require('./instagram-feed.js');
+var nav = require('./nav.js');
 
+var isMobile = (window.innerWidth < 768);
 
+var $window = $(window);
 var $pageContainer = $('main');
 var $body = $('body');
 
@@ -10399,10 +10433,14 @@ function checkInitialLoad() {
 }
 
 function init() {
+
+	// Bind internal scroll-to links
+	nav.bindHashes();
+
 	var $internalLinks = $('a').filter(function(i){
-		return this.hostname === window.location.hostname;
+			return (this.hash === '') && (this.hostname === window.location.hostname);
 	});
-	var $window = $(window);
+	// console.log('InternalLinks: %o', $internalLinks);
 
 
 	$internalLinks.off('click');
@@ -10422,7 +10460,7 @@ function init() {
 }
 
 module.exports = init;
-},{"../server/server-path-ref.js":9,"./connect.js":3,"./instagram-feed.js":4,"./maps.js":6,"jquery":1}],9:[function(require,module,exports){
+},{"../server/server-path-ref.js":9,"./connect.js":3,"./instagram-feed.js":4,"./maps.js":6,"./nav.js":7,"jquery":1}],9:[function(require,module,exports){
 'use strict';
 
 var pathRef = {

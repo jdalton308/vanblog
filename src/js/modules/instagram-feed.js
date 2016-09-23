@@ -14,7 +14,7 @@ function getIGphotos() {
 		dataType: 'json'
 	}).done(function(data){
 			console.log('Recieved IG data:');
-			// console.log(data);
+			console.log(data);
 
 			// Remove placeholder photos
 			$photoCont.empty();
@@ -26,8 +26,8 @@ function getIGphotos() {
 
 				var $imgLink = $('<a href="' + post.link + '" target="_blank" class="ig-link"></a>')
 				var imgHTML = '<img src="' + imgUrl + '">';
-				var locationHTML = '<h4 class="location">' + post.location.name + '</h4>';
-				var captionHTML = '<h4 class="caption">' + post.caption.text + '</h4>';
+				var locationHTML = (post.location) ? '<h4 class="location">' + post.location.name + '</h4>' : '';
+				var captionHTML = (post.caption) ? '<h4 class="caption">' + post.caption.text + '</h4>' : '';
 
 				// Create HTML
 				$imgLink.html(imgHTML + captionHTML + locationHTML);
