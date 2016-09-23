@@ -37,17 +37,12 @@ function bindNavItemEvents() {
 }
 
 function bindHashLinkEvents() {
-	console.log('binding hash nav...');
-
 	var $page = $('.main-scroll');
 	var $pageNavLink = $('a[href^="#"]');
 	
 	if ($pageNavLink.length) {
-		console.log('found hash links...');
-		console.log($pageNavLink);
 
 		$pageNavLink.click(function(e){
-			console.log('--click!')
 			e.preventDefault();
 
 			var target = $(this).attr('href');
