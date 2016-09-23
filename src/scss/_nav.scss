@@ -116,6 +116,7 @@
 			.up-button {
 				display: inline-block;
 				@include centerX();
+				z-index: 3;
 				top: 20px;
 				padding: 20px;
 				cursor: pointer;
@@ -182,7 +183,7 @@
 						}
 
 						.sub-nav {
-							max-height: 400px;
+							max-height: 200px;
 							margin-top: 10px;
 						}
 					}

@@ -7,6 +7,6 @@ var connect = require('./modules/connect.js');
 
 Landing();
 
-Nav();
+Nav.init();
 
 Router();

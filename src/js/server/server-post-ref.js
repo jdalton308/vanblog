@@ -14,7 +14,7 @@ let posts = [
 	},
 	{
 		'name': 'Van Build: Flooring',
-		'date': '6.3.2016',
+		'date': '6.13.2016',
 		'categories': ['Van'],
 		// 'thumbnail': '/path/to/thumbnail'(?),
 		'link': '/blog/post/van-flooring',
@@ -22,7 +22,7 @@ let posts = [
 	},
 	{
 		'name': 'Van Build: Insulation',
-		'date': '6.4.2016',
+		'date': '6.18.2016',
 		'categories': ['Van'],
 		// 'thumbnail': '/path/to/thumbnail'(?),
 		'link': '/blog/post/van-insulation',
@@ -30,7 +30,7 @@ let posts = [
 	},
 	{
 		'name': 'Van Build: Walls and Ceiling',
-		'date': '6.5.2016',
+		'date': '7.5.2016',
 		'categories': ['Van'],
 		// 'thumbnail': '/path/to/thumbnail'(?),
 		'link': '/blog/post/van-walls',
@@ -38,23 +38,15 @@ let posts = [
 	},
 	{
 		'name': 'Van Build: Carpentry',
-		'date': '6.6.2016',
+		'date': '7.16.2016',
 		'categories': ['Van'],
 		// 'thumbnail': '/path/to/thumbnail'(?),
 		'link': '/blog/post/van-carpentry',
 		'description': 'The woodwork within the van: The bed frame, shelves, and sink counter.'
 	},
 	{
-		'name': 'Van Build: Online Resources',
-		'date': '6.13.2016',
-		'categories': ['Van'],
-		// 'thumbnail': '/path/to/thumbnail'(?),
-		'link': '/blog/post/van-build-resources',
-		'description': 'A collection of other resouces for building a van, including websites, forums, and videos.'
-	},
-	{
 		'name': 'Van Build: Electrical',
-		'date': '6.20.2016',
+		'date': '8.2.2016',
 		'categories': ['Van'],
 		// 'thumbnail': '/path/to/thumbnail'(?),
 		'link': '/blog/post/van-electrical',
@@ -62,7 +54,7 @@ let posts = [
 	},
 	{
 		'name': 'Van Build: Plumbing',
-		'date': '6.25.2016',
+		'date': '8.15.2016',
 		'categories': ['Van'],
 		// 'thumbnail': '/path/to/thumbnail'(?),
 		'link': '/blog/post/van-plumbing',
@@ -70,11 +62,19 @@ let posts = [
 	},
 	{
 		'name': 'Van Build: Total Price',
-		'date': '6.230.2016',
+		'date': '8.29.2016',
 		'categories': ['Van'],
 		// 'thumbnail': '/path/to/thumbnail'(?),
 		'link': '/blog/post/van-price',
 		'description': 'The total cost of everything that went into the van, from lumber to solar to the van itself.'
+	},
+	{
+		'name': 'Van Build: Online Resources',
+		'date': '9.1.2016',
+		'categories': ['Van'],
+		// 'thumbnail': '/path/to/thumbnail'(?),
+		'link': '/blog/post/van-build-resources',
+		'description': 'A collection of other resouces for building a van, including websites, forums, and videos.'
 	}
 ];
 

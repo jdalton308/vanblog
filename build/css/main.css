@@ -294,6 +294,7 @@ ol li {
       -ms-transform: translateX(50%);
       -webkit-transform: translateX(50%);
       transform: translateX(50%);
+      z-index: 3;
       top: 20px;
       padding: 20px;
       cursor: pointer; }
@@ -335,7 +336,7 @@ ol li {
         .content .side-nav nav .nav-item.open .icon-arrow:after {
           border-top-color: #6bd6f1; }
         .content .side-nav nav .nav-item.open .sub-nav {
-          max-height: 400px;
+          max-height: 200px;
           margin-top: 10px; }
     .content .side-nav .bottom-nav {
       position: absolute;

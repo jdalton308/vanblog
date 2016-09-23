@@ -10,9 +10,7 @@ var $parentItem = $navItems.filter('.nav-parent');
 var $mobileBtn = $('.mobile-nav-btn');
 var $mobileUpBtn = $('.mobile-up-button');
 
-
-function init() {
-
+function bindHamburgerEvents() {
 	// Handle hamburger toggling
 	$mobileBtn.click(function(){
 		$nav.addClass('open');
@@ -21,7 +19,9 @@ function init() {
 		ev.stopPropagation();
 		$nav.removeClass('open');
 	});
+}
 
+function bindNavItemEvents() {
 	// Handle secondary-levels
 	if (!isMobile) {
 		$parentItem.click(function(){
@@ -36,5 +36,32 @@ function init() {
 	}
 }
 
+function bindHashLinkEvents() {
+	var $page = $('.main-scroll');
+	var $pageNavLink = $('a[href^="#"]');
+	
+	if ($pageNavLink.length) {
 
-module.exports = init;
+		$pageNavLink.click(function(e){
+			e.preventDefault();
+
+			var target = $(this).attr('href');
+			var targetEl = $(target);
+			var offset = targetEl.offset().top;
+
+			$page.animate({
+				scrollTop: offset
+			}, 800);
+
+		});
+	}
+}
+
+function init() {
+	bindHamburgerEvents();
+	bindNavItemEvents();
+}
+
+
+module.exports.init = init;
+module.exports.bindHashes = bindHashLinkEvents;
