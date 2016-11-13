@@ -10490,7 +10490,7 @@ var pathRef = {
 	'/blog/post/van-build-resources': '/posts/7-van-other_resources.html',
 	'/blog/post/van-electrical': '/posts/3-van-electrical.html',
 	'/blog/post/van-plumbing': '/posts/4-van-plumbing.html',
-	'/blog/post/van-price': '/posts/6-van-price.html',
+	// '/blog/post/van-price': '/posts/6-van-price.html',
 }
 
 module.exports = pathRef;
